@@ -1,2 +1,2 @@
 # ICS3U-firstGame
-Sanjeev Easparan and Daniel Agapov's first game for the ICS3U class. 
+Sanjeev, try editing this and committing your changes with GitHub Desktop from Visual Studio Code.
