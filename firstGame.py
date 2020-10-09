@@ -9,7 +9,7 @@ count = 0
 font = pygame.font.SysFont('arial', 32) #Font for text
 posText = (0, 0) 
 running = "True"
-#Main Loop
+
 while running:
     pygame.time.delay(75) 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
