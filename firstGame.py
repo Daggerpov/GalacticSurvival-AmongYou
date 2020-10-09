@@ -2,7 +2,7 @@ import pygame
 pygame.init()
 
 GUI = pygame.display.set_mode((500, 500))
-pygame.display.set_caption("First Game")
+pygame.display.set_caption("Galactic Survival: Among You")
 
 green = (0, 255, 0)
 blue = (0, 0, 128)
