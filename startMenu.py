@@ -3,7 +3,7 @@ import sys
 
 pygame.init()
 
-gui = pygame.display.set_mode((1000, 700)) 
+gui = pygame.display.set_mode((1366, 768)) 
 width = gui.get_width()
 height = gui.get_height()
 
