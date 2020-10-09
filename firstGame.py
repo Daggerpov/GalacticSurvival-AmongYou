@@ -1,14 +1,18 @@
 import pygame
+import os
 pygame.init() #Initializes the PyGame module
 
 GUI = pygame.display.set_mode((500, 500)) #Makes Window
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
-
+#resources = pygame.font.get_fonts()
+title = pygame.image.load(os.path.join('data', 'GalacticSurvivalTitle.png'))
 green = (0, 255, 0)
 count = 0
-font = pygame.font.SysFont('arial', 32) #Font for text
+#font = pygame.font.Font('', 32) #Font for text
 posText = (0, 0) 
 running = "True"
+#resources.sort()
+#print(resources)
 #Main Loop
 while running:
     pygame.time.delay(75) 
@@ -25,4 +29,4 @@ while running:
         if event.type == pygame.QUIT: #The close window function
             running = False
     pygame.display.update() #Updates the screen
-pygame.quit()
+pygame.quit()'''
