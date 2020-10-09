@@ -11,15 +11,14 @@ font = pygame.font.Font('freesansbold.ttf', 16)
 posText = (0, 0)
 running = "True"
 while running:
-    pygame.time.delay(100)
+    pygame.time.delay(1000)
     for event in pygame.event.get():
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            count+=1
-            GUI.fill((0, 0, 0))
-            text = font.render('Count = ' + str(count), True, green)
-            GUI.blit(text, posText)
-            pygame.display.update()
+        count+=1
+        GUI.fill((0, 0, 0))
+        text = font.render('Count = ' + str(count), True, green)
+        GUI.blit(text, posText)
+        #if event.type == pygame.MOUSEBUTTONDOWN: 
         if event.type == pygame.QUIT:
             running = False
-
+    pygame.display.update()
 pygame.quit()
