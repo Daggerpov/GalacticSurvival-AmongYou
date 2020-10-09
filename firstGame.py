@@ -1,5 +1,5 @@
 import pygame
-pygame.init()
+pygame.init() #Initializes the PyGame module
 
 GUI = pygame.display.set_mode((500, 500)) #Makes Window
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
