@@ -4,13 +4,16 @@ pygame.init() #Initializes the PyGame module
 
 GUI = pygame.display.set_mode((500, 500)) #Makes Window
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
+
 #resources = pygame.font.get_fonts()
 title = pygame.image.load(os.path.join('data', 'GalacticSurvivalTitle.png'))
 green = (0, 255, 0)
 count = 0
+
 #font = pygame.font.Font('', 32) #Font for text
 posText = (0, 0) 
 running = "True"
+
 while running:
     pygame.time.delay(75) 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
