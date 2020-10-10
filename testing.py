@@ -29,4 +29,4 @@ while running:
         if event.type == pygame.QUIT: #The close window function
             running = False
     pygame.display.update() #Updates the screen
-pygame.quit()'''
+pygame.quit()
