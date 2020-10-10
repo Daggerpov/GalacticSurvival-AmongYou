@@ -16,7 +16,7 @@ height = gui.get_height()
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
 running = True
 
-font = pygame.font.Font('freesansbold.ttf',32)
+font = pygame.font.Font(r'C:\Users\Sanjeev\Documents\GitHub\ICS3U-firstGame\venv\Lib\site-packages\pygame\In your face, joffrey!.ttf',32)
 
 stars = []
 
@@ -39,7 +39,10 @@ while running:
             if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
                 running = False
     
-    start()
+    gui.fill((0, 0, 0))
+
     spacebg()
+    start()
+    
     pygame.display.update() #Updates the screen
 pygame.quit()

@@ -8,7 +8,6 @@ def start():
 
     startbutton = font.render("Start", True, blue)
     
-    gui.fill((0, 0, 0))
 
     if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
         pygame.draw.rect(gui, green,[width/2, height/2, 140, 40]) 
