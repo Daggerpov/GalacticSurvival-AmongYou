@@ -1,12 +1,12 @@
 def start():
-    from main import gui, width, height, font, mouse, pygame
+    from main import gui, width, height, buttonFont, mouse, pygame
     
 
     green = (0, 255, 0)
     dark_green= (0, 200, 0)
     blue = (0, 0, 128)
 
-    startbutton = font.render("Start", True, blue)
+    startbutton = buttonFont.render("Start", True, blue)
     
 
     if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 

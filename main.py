@@ -2,6 +2,7 @@ import pygame
 import sys
 import random
 from startMenu import start, spacebg
+from endMenu import end
 
 pygame.init()
 
@@ -16,7 +17,8 @@ height = gui.get_height()
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
 running = True
 
-font = pygame.font.Font(r'C:\Users\Sanjeev\Documents\GitHub\ICS3U-firstGame\venv\Lib\site-packages\pygame\In your face, joffrey!.ttf',32)
+titleFont = pygame.font.Font(r'C:\Users\Sanjeev\Documents\GitHub\ICS3U-firstGame\venv\Lib\site-packages\pygame\In your face, joffrey!.ttf', 100)
+buttonFont = pygame.font.Font(r'C:\Users\Sanjeev\Documents\GitHub\ICS3U-firstGame\venv\Lib\site-packages\pygame\In your face, joffrey!.ttf', 32)
 
 stars = []
 
@@ -31,18 +33,28 @@ while running:
 
     mouse = pygame.mouse.get_pos()
 
-    
+    gui.fill((0, 0, 0))
+    spacebg()
+
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
             if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
                 running = False
-    
-    gui.fill((0, 0, 0))
-
-    spacebg()
+            
     start()
     
     pygame.display.update() #Updates the screen
+'''
+while True:
+    gui.fill((0, 0, 0))
+    spacebg()
+    for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
+        if event.type == pygame.QUIT:
+            break
+    end()
+    pygame.display.update()
+'''
 pygame.quit()
+quit() 
