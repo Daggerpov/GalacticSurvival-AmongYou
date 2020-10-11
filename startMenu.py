@@ -1,5 +1,5 @@
 def start():
-    from main import gui, width, height, buttonFont, mouse, pygame
+    from main import pygame, gui, width, height, buttonFont, mouse
     
 
     green = (0, 255, 0)
@@ -7,7 +7,6 @@ def start():
     blue = (0, 0, 128)
 
     startbutton = buttonFont.render("Start", True, blue)
-    
 
     if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
         pygame.draw.rect(gui, green,[width/2, height/2, 140, 40]) 
