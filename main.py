@@ -1,7 +1,7 @@
 import pygame
 import sys
 import random
-from startMenu import start, spacebg
+from startMenu import start
 from endMenu import end
 from task_selection import select
 
@@ -21,14 +21,40 @@ running = True
 titleFont = pygame.font.Font(r'C:\Users\Sanjeev\Documents\GitHub\ICS3U-firstGame\venv\Lib\site-packages\pygame\In your face, joffrey!.ttf', 100)
 buttonFont = pygame.font.Font(r'C:\Users\Sanjeev\Documents\GitHub\ICS3U-firstGame\venv\Lib\site-packages\pygame\In your face, joffrey!.ttf', 32)
 
+def posText(text, x, y):
+    titleRect = text.get_rect()
+    titleRect.center = (x, y)
+    return titleRect
+
 green = (0, 255, 0)
 
 stars = []
+
+screen = 0
 
 for i in range(125):
     starx = random.randrange(0, resx)
     stary = random.randrange(0, resy)
     stars.append([starx, stary])
+
+def spacebg():
+    from main import resx, resy, running, gui, pygame, stars, starx , stary
+    import random
+
+    for i in range(len(stars)):
+        # Draw the star
+        pygame.draw.circle(gui, (255, 255, 255), stars[i], 2)
+        # Move the star right one pixel
+        stars[i][0] += 1
+        # If the star has moved off the bottom of the screen
+        if stars[i][0] > resx:
+            # Reset it just above the top
+            starx = random.randrange(-50, -10)
+            stars[i][0] = starx
+            # Give it a new y position
+            stary = random.randrange(0, resy)
+            stars[i][1] = stary
+
 
 
 while running:
@@ -36,34 +62,13 @@ while running:
 
     mouse = pygame.mouse.get_pos()
 
-    gui.fill((0, 0, 0))
-    spacebg()
-
-    for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
-        if event.type == pygame.QUIT:
-            quit()
-        if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
-            if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-                running = False
-            
     start()
-    
+
+    if screen == 1:
+        select()
+    #end()
     pygame.display.update() #Updates the screen
 
-'''running = True
 
-while running:
-    gui.fill((0, 0, 0))
-    #spacebg()
-    for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
-        if event.type == pygame.QUIT:
-            quit()
-        if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
-            if width/4 <= mouse[0] <= width/4+250 and height/4 <= mouse[1] <= height/4+100:
-                pygame.draw.rect(gui, green,[width/4, height/4, 250, 100])
-    #end()
-    select()
-    pygame.display.update()
-'''
 pygame.quit()
 quit() 
