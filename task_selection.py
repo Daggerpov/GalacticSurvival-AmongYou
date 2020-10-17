@@ -19,6 +19,7 @@ def select():
             if width/2 <= mouse[0] <= width/2+rectW and height/6<= mouse[1] <= height/6+rectH:
                 print("Clicked")
 
+
     if width/6 <= mouse[0] <= width/6+rectW and height/6 <= mouse[1] <= height/6+rectH: 
         pygame.draw.rect(gui, red,[width/6, height/6, rectW, rectH]) 
         pygame.draw.rect(gui, dark_red,[width/2, height/6, rectW, rectH]) 

@@ -1,4 +1,5 @@
 def end():
+    import main
     from main import gui, width, height, titleFont, buttonFont, mouse, pygame, posText, spacebg
 
     green = (0, 255, 0)
@@ -19,6 +20,8 @@ def end():
         if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
             if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
                 print("Clicked")
+                main.screen = 0
+                
 
     if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
         pygame.draw.rect(gui, red,[width/2, height/2, 140, 40]) 
