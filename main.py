@@ -18,8 +18,8 @@ height = gui.get_height()
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
 running = True
 
-titleFont = pygame.font.Font(r'C:\Users\Sanjeev\Documents\GitHub\ICS3U-firstGame\venv\Lib\site-packages\pygame\In your face, joffrey!.ttf', 100)
-buttonFont = pygame.font.Font(r'C:\Users\Sanjeev\Documents\GitHub\ICS3U-firstGame\venv\Lib\site-packages\pygame\In your face, joffrey!.ttf', 32)
+titleFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 100)
+buttonFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 32)
 
 def posText(text, x, y):
     titleRect = text.get_rect()
