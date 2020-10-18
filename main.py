@@ -22,8 +22,6 @@ running = True
 titleFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 100)
 buttonFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 32)
 
-
-
 def posText(text, x, y):
     titleRect = text.get_rect()
     titleRect.center = (x, y)
