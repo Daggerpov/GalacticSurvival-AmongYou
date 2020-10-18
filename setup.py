@@ -33,28 +33,28 @@ def select():
             if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
                 main.screen = 0
             
-            if width-200 <= mouse[0] <= width-100 and height//4-40 <= mouse[1] <= height//4+40:
+            if width//2-150 <= mouse[0] <= width//2-50 and height//2-40 <= mouse[1] <= height//2+40:
                 if main.short_tasks == 0:
                     main.short_tasks += 1
                     pygame.mixer.Sound.play(increase_task_sound)
                 else:
                     pygame.mixer.Sound.play(error_task_sound)
             
-            if 100 <= mouse[0] <= 200 and height//4-40 <= mouse[1] <= height//4+40:
+            if 100 <= mouse[0] <= 200 and height//2-40 <= mouse[1] <= height//2+40:
                 if main.short_tasks == 1:
                     main.short_tasks -= 1
                     pygame.mixer.Sound.play(decrease_task_sound)
                 else:
                     pygame.mixer.Sound.play(error_task_sound)
 
-            if width-200 <= mouse[0] <= width-100 and height//1.25-40 <= mouse[1] <= height//1.25+40:
+            if width-150 <= mouse[0] <= width-50 and height//2-40 <= mouse[1] <= height//2+40:
                 if main.long_tasks == 0:
                     main.long_tasks += 1
                     pygame.mixer.Sound.play(increase_task_sound)
                 else:
                     pygame.mixer.Sound.play(error_task_sound)
 
-            if 100 <= mouse[0] <= 200 and height//1.25-40 <= mouse[1] <= height//1.25+40:
+            if width//2+100 <= mouse[0] <= width//2+200 and height//2-40 <= mouse[1] <= height//2+40:
                 if main.long_tasks == 1:
                     main.long_tasks -= 1
                     pygame.mixer.Sound.play(decrease_task_sound)
@@ -84,27 +84,14 @@ def select():
     #back button for both setup.py and instructions.py
     gui.blit(back, (25, 15))
 
-    pygame.draw.polygon(gui, yellow, [(width-200, height//4-40), (width-100, height//4), (width-200, height//4+40)])
-    pygame.draw.polygon(gui, yellow, [(200, height//4-40), (100, height//4), (200, height//4+40)])
-    pygame.draw.polygon(gui, yellow, [(width-200, height//1.25-40), (width-100, height//1.25), (width-200, height//1.25+40)])
-    pygame.draw.polygon(gui, yellow, [(200, height//1.25-40), (100, height//1.25), (200, height//1.25+40)])
 
     gui.blit(plus, (width//2-150, height//2-40))
     gui.blit(minus, (100, height//2-40))
     gui.blit(plus, (width-150, height//2-40))
     gui.blit(minus, (width//2+100, height//2-40))
 
-    drawBorder(gui, width-200, height//4-40)
-    drawBorder(gui, 100, height//4-40)
-    drawBorder(gui, width-200, height//1.25-40)
-    drawBorder(gui, 100, height//1.25-40)
 
     shortTasks = taskFont.render('Short Tasks = ' + str(main.short_tasks), True, (0, 255, 0)) #Initializing text
     longTasks = taskFont.render('Long Tasks = ' + str(main.long_tasks), True, (0, 255, 0)) #Initializing text
-    gui.blit(shortTasks, posText(shortTasks, width//1.25, height//2)) #Printing text on screen, requires text and position
-    gui.blit(longTasks, posText(longTasks, width//4, height//2)) #Printing text on screen, requires text and position
-
-def drawBorder(screen, bordx, bordy):
-    from main import pygame
-    for i in range(4):
-        pygame.draw.rect(screen, (0, 255, 0), (bordx-i ,bordy-i , 105, 85), 1)
+    gui.blit(shortTasks, posText(shortTasks, width//4+25, height//2)) #Printing text on screen, requires text and position
+    gui.blit(longTasks, posText(longTasks, width//1.25-25, height//2)) #Printing text on screen, requires text and position
