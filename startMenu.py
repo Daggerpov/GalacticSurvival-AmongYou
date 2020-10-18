@@ -20,17 +20,18 @@ def start():
             if width/2-70 <= mouse[0] <= width/2+70 and height/2 <= mouse[1] <= height/2+40:
                 print("Clicked")
                 main.screen = 1
-            if width/2-50 <= mouse[0] <= width/2+50 and height/4*3 <= mouse[1] == height/4*3+40:
+            if width/2-60 <= mouse[0] <= width/2+60 and height/4*3 <= mouse[1] <= height/4*3+40:
                 print("Clicked instructions")
                 main.screen = 2
             
-
+    #start rectangle
     if width/2-70 <= mouse[0] <= width/2+70 and height/2 <= mouse[1] <= height/2+40: 
         pygame.draw.rect(gui, green,[width/2-70, height/2, 140, 40]) 
         
     else: 
         pygame.draw.rect(gui, dark_green, [width/2-70, height/2, 140, 40]) 
 
+    #instructions rectangle
     if width/2-60 <= mouse[0] <= width/2+60 and height/4*3 <= mouse[1] <= height/4*3+40: 
         pygame.draw.rect(gui, green,[width/2-60, height/4*3, 120, 40]) 
         
@@ -38,9 +39,9 @@ def start():
         pygame.draw.rect(gui, dark_green, [width/2-60, height/4*3, 120, 40]) 
 
 
-
+    #title
     gui.blit(startTitle , posText(startTitle, width//2, 75))
-    # superimposing the text onto our button 
+    #start button 
     gui.blit(startbutton , (width/2-50, height/2+5))
     #instructions button
     gui.blit(instructions, (width/2-50, height/4*3+5))
