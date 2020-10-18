@@ -36,6 +36,9 @@ stars = []
 
 screen = 0
 
+short_tasks = 0
+long_tasks = 0
+
 for i in range(125):
     starx = random.randrange(0, resx)
     stary = random.randrange(0, resy)
