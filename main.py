@@ -23,7 +23,8 @@ running = True
 
 titleFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 100)
 buttonFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 32)
-textFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 28)
+taskFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 50)
+instructFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 36)
 
 def posText(text, x, y):
     titleRect = text.get_rect()
@@ -39,7 +40,7 @@ screen = 0
 short_tasks = 0
 long_tasks = 0
 
-for i in range(125):
+for i in range(60):
     starx = random.randrange(0, resx)
     stary = random.randrange(0, resy)
     stars.append([starx, stary])

@@ -1,6 +1,6 @@
 def select():
     import main
-    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, textFont
+    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont
 
 
     blue = (0, 0, 128)
@@ -70,8 +70,8 @@ def select():
     drawBorder(gui, width-200, height//1.25-40)
     drawBorder(gui, 100, height//1.25-40)
 
-    shortTasks = textFont.render('Short Tasks = ' + str(main.short_tasks), True, (0, 255, 0)) #Initializing text
-    longTasks = textFont.render('Long Tasks = ' + str(main.long_tasks), True, (0, 255, 0)) #Initializing text
+    shortTasks = taskFont.render('Short Tasks = ' + str(main.short_tasks), True, (0, 255, 0)) #Initializing text
+    longTasks = taskFont.render('Long Tasks = ' + str(main.long_tasks), True, (0, 255, 0)) #Initializing text
     gui.blit(shortTasks, (width//2, height//4)) #Printing text on screen, requires text and position
     gui.blit(longTasks, (width//2, height//1.25)) #Printing text on screen, requires text and position
 
