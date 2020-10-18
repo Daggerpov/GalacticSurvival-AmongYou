@@ -17,38 +17,53 @@ def select():
     spacebg()
 
     back = buttonFont.render("Back", True, blue)
+    start = buttonFont.render("Start Game", True, blue)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
            quit()
-        if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
+        if event.type == pygame.MOUSEBUTTONDOWN: 
             if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
                 main.screen = 0
             
-            if width//2-150 <= mouse[0] <= width//2-50 and height//2-40 <= mouse[1] <= height//2+40:
+            if width//2-150 <= mouse[0] <= width//2-50 and height//2-90 <= mouse[1] <= height//2-10:
                 if main.short_tasks == 0:
                     main.short_tasks += 1
                     pygame.mixer.Sound.play(increase_task_sound)
                 else:
                     pygame.mixer.Sound.play(error_task_sound)
             
-            if 100 <= mouse[0] <= 200 and height//2-40 <= mouse[1] <= height//2+40:
+            if 100 <= mouse[0] <= 200 and height//2-90 <= mouse[1] <= height//2-10:
                 if main.short_tasks == 1:
                     main.short_tasks -= 1
                     pygame.mixer.Sound.play(decrease_task_sound)
                 else:
                     pygame.mixer.Sound.play(error_task_sound)
 
-            if width-150 <= mouse[0] <= width-50 and height//2-40 <= mouse[1] <= height//2+40:
+            if width-150 <= mouse[0] <= width-50 and height//2-90 <= mouse[1] <= height//2-10:
                 if main.long_tasks == 0:
                     main.long_tasks += 1
                     pygame.mixer.Sound.play(increase_task_sound)
                 else:
                     pygame.mixer.Sound.play(error_task_sound)
 
-            if width//2+100 <= mouse[0] <= width//2+200 and height//2-40 <= mouse[1] <= height//2+40:
+            if width//2+100 <= mouse[0] <= width//2+200 and height//2-90 <= mouse[1] <= height//2-10:
                 if main.long_tasks == 1:
                     main.long_tasks -= 1
+                    pygame.mixer.Sound.play(decrease_task_sound)
+                else:
+                    pygame.mixer.Sound.play(error_task_sound)
+            
+            if width//2+250 <= mouse[0] <= width//2+350 and height//2+55 <= mouse[1] <= height//2+135:
+                if main.index >= 0:
+                    main.index += 1
+                    pygame.mixer.Sound.play(increase_task_sound)
+                else:
+                    pygame.mixer.Sound.play(error_task_sound)
+
+            if width//2-325 <= mouse[0] <= width//2-225 and height//2+55 <= mouse[1] <= height//2+135:
+                if main.index <= 4:
+                    main.index -= 1
                     pygame.mixer.Sound.play(decrease_task_sound)
                 else:
                     pygame.mixer.Sound.play(error_task_sound)
@@ -76,12 +91,23 @@ def select():
     #back button for both setup.py and instructions.py
     gui.blit(back, (25, 15))
 
-    gui.blit(plus, (width//2-150, height//2-40))
-    gui.blit(minus, (100, height//2-40))
-    gui.blit(plus, (width-150, height//2-40))
-    gui.blit(minus, (width//2+100, height//2-40))
+    if width//2-50 <= mouse[0] <= width//2+70 and height//1.25 <= mouse[1] <= height//1.25+40:
+        pygame.draw.rect(gui, green, [width//2-50, height//1.25, 120, 40])
+    else:
+        pygame.draw.rect(gui, dark_green, [width//2-50, height//1.25, 120, 40])
+
+    gui.blit(start, posText(start, width//2+10, height//1.25+20))
+
+    gui.blit(plus, (width//2-150, height//2-90))
+    gui.blit(minus, (100, height//2-90))
+    gui.blit(plus, (width-150, height//2-90))
+    gui.blit(minus, (width//2+100, height//2-90))
+    gui.blit(plus, (width//2+250, height//2+55))
+    gui.blit(minus, (width//2-325, height//2+55))
 
     shortTasks = taskFont.render('Short Tasks = ' + str(main.short_tasks), True, (0, 255, 0)) #Initializing text
     longTasks = taskFont.render('Long Tasks = ' + str(main.long_tasks), True, (0, 255, 0)) #Initializing text
-    gui.blit(shortTasks, posText(shortTasks, width//4+25, height//2)) #Printing text on screen, requires text and position
-    gui.blit(longTasks, posText(longTasks, width//1.25-25, height//2)) #Printing text on screen, requires text and position
+    difficultySlider = taskFont.render('Difficulty = ' + str(main.difficulty[main.index]), True, (0, 255, 0))
+    gui.blit(shortTasks, posText(shortTasks, width//4+25, height//2-50)) #Printing text on screen, requires text and position
+    gui.blit(longTasks, posText(longTasks, width//1.25-25, height//2-50)) #Printing text on screen, requires text and position
+    gui.blit(difficultySlider, posText(difficultySlider, width//2, height//2+100))
