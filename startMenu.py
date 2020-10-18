@@ -6,32 +6,40 @@ def start():
     green = (0, 255, 0)
     dark_green= (0, 200, 0)
     blue = (0, 0, 128)
+    #white = (255, 255, 255)
 
     gui.fill((0, 0, 0))
     spacebg()
     startTitle = titleFont.render("Galactic Survival: Among You", True, green)
     startbutton = buttonFont.render("Start Game", True, blue)
+    #instructions = buttonFont.render("Instructions", True, white)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
            quit()
         if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
-            if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
+            if width/2-70 <= mouse[0] <= width/2+70 and height/2 <= mouse[1] <= height/2+40:
                 print("Clicked")
                 main.screen = 1
-                
-    
             
 
-    if width/2-70 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
+    if width/2-70 <= mouse[0] <= width/2+70 and height/2 <= mouse[1] <= height/2+40: 
         pygame.draw.rect(gui, green,[width/2-70, height/2, 140, 40]) 
         
     else: 
         pygame.draw.rect(gui, dark_green, [width/2-70, height/2, 140, 40]) 
+
+    #if width/2-40 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
+    #    pygame.draw.rect(gui, green,[width/2-40, height/2, 140, 40]) 
+        
+    #else: 
+    #    pygame.draw.rect(gui, dark_green, [width/2-40, height/2, 140, 40]) 
     
 
     gui.blit(startTitle , posText(startTitle, width//2, 75))
     # superimposing the text onto our button 
     gui.blit(startbutton , (width/2-50, height/2+5))
+    #instructions button
+    #gui.blit(instructions, (width/2-40, height-100))
 
 
