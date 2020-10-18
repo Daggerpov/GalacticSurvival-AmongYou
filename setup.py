@@ -102,7 +102,7 @@ def select():
     shortTasks = taskFont.render('Short Tasks = ' + str(main.short_tasks), True, (0, 255, 0)) #Initializing text
     longTasks = taskFont.render('Long Tasks = ' + str(main.long_tasks), True, (0, 255, 0)) #Initializing text
     gui.blit(shortTasks, posText(shortTasks, width//1.25, height//2)) #Printing text on screen, requires text and position
-    gui.blit(longTasks, posText(longTasks, (width//4, height//2)) #Printing text on screen, requires text and position
+    gui.blit(longTasks, posText(longTasks, width//4, height//2)) #Printing text on screen, requires text and position
 
 def drawBorder(screen, bordx, bordy):
     from main import pygame
