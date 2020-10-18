@@ -1,6 +1,6 @@
 def select():
     import main
-    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont
+    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, increase_task_sound, error_task_sound, decrease_task_sound
 
 
     blue = (0, 0, 128)
@@ -24,18 +24,34 @@ def select():
         if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
             if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
                 main.screen = 0
+            
             if width-200 <= mouse[0] <= width-100 and height//4-40 <= mouse[1] <= height//4+40:
-                print("Clicked")
-                main.short_tasks += 1
+                if main.short_tasks == 0:
+                    main.short_tasks += 1
+                    pygame.mixer.Sound.play(increase_task_sound)
+                else:
+                    pygame.mixer.Sound.play(error_task_sound)
+            
             if 100 <= mouse[0] <= 200 and height//4-40 <= mouse[1] <= height//4+40:
-                print("Clicked")
-                main.short_tasks -= 1
+                if main.short_tasks == 1:
+                    main.short_tasks -= 1
+                    pygame.mixer.Sound.play(decrease_task_sound)
+                else:
+                    pygame.mixer.Sound.play(error_task_sound)
+
             if width-200 <= mouse[0] <= width-100 and height//1.25-40 <= mouse[1] <= height//1.25+40:
-                print("Clicked")
-                main.long_tasks += 1
+                if main.long_tasks == 0:
+                    main.long_tasks += 1
+                    pygame.mixer.Sound.play(increase_task_sound)
+                else:
+                    pygame.mixer.Sound.play(error_task_sound)
+
             if 100 <= mouse[0] <= 200 and height//1.25-40 <= mouse[1] <= height//1.25+40:
-                print("Clicked")
-                main.long_tasks -= 1
+                if main.long_tasks == 1:
+                    main.long_tasks -= 1
+                    pygame.mixer.Sound.play(decrease_task_sound)
+                else:
+                    pygame.mixer.Sound.play(error_task_sound)
 
     '''
     if width-200 <= mouse[0] <= width-100 and height//4-40 <= mouse[1] <= height//4+40: 
