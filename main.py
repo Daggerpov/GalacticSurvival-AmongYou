@@ -1,9 +1,11 @@
 import pygame
 import sys
 import random
+
 from startMenu import start
 from endMenu import end
-from task_selection import select
+from setup import select
+from instructions import instruct
 
 pygame.init()
 
@@ -69,6 +71,9 @@ while running:
     elif screen == 1:
         select()
     
+    elif screen == 2:
+        instruct()
+
     else:
         end()
     
