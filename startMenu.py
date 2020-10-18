@@ -20,7 +20,7 @@ def start():
             if width/2-70 <= mouse[0] <= width/2+70 and height/2 <= mouse[1] <= height/2+40:
                 print("Clicked")
                 main.screen = 1
-            elif width/2-50 <= mouse[0] <= width/2+50 and height/4*3 <= mouse[1] == height/4*3+40:
+            if width/2-50 <= mouse[0] <= width/2+50 and height/4*3 <= mouse[1] == height/4*3+40:
                 print("Clicked instructions")
                 main.screen = 2
             
