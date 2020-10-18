@@ -11,10 +11,6 @@ def select():
     green = (0, 255, 0)
     dark_green = (0, 200, 0)
 
-    dark_red = (175, 0, 0)
-    red = (255, 0, 0)
-    yellow = (255, 255, 0)
-    dark_yellow = (215, 215, 0)
 
     increase_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_short_generic_could_be_collect_item_001_56968.wav")
     decrease_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_tone_marimba_high_pitched_generic_tone_003_56830.wav")
