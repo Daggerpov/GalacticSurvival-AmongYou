@@ -67,6 +67,9 @@ def select():
                     pygame.mixer.Sound.play(decrease_task_sound)
                 else:
                     pygame.mixer.Sound.play(error_task_sound)
+            
+            if width//2-50 <= mouse[0] <= width//2+70 and height//1.25 <= mouse[1] <= height//1.25+40:
+                main.screen == 3
 
     '''
     if width-200 <= mouse[0] <= width-100 and height//4-40 <= mouse[1] <= height//4+40: 
