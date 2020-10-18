@@ -2,7 +2,6 @@ def start():
     import main
     from main import pygame, gui, width, height, buttonFont, mouse, titleFont, posText, spacebg
     
-
     green = (0, 255, 0)
     dark_green= (0, 200, 0)
     blue = (0, 0, 128)

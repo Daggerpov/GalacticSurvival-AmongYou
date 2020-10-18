@@ -5,17 +5,13 @@ def select():
     plus = pygame.transform.scale(pygame.image.load("./images/Plus.png"), (100, 80))
     minus = pygame.transform.scale(pygame.image.load("./images/Minus.png"), (100, 80))
 
-    
-
     blue = (0, 0, 128)
     green = (0, 255, 0)
     dark_green = (0, 200, 0)
 
-
     increase_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_short_generic_could_be_collect_item_001_56968.wav")
     decrease_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_tone_marimba_high_pitched_generic_tone_003_56830.wav")
     error_task_sound = pygame.mixer.Sound("./audio/Computer Error Alert-SoundBible.com-783113881.wav")
-
 
     gui.fill((0, 0, 0))
     spacebg()
@@ -80,12 +76,10 @@ def select():
     #back button for both setup.py and instructions.py
     gui.blit(back, (25, 15))
 
-
     gui.blit(plus, (width//2-150, height//2-40))
     gui.blit(minus, (100, height//2-40))
     gui.blit(plus, (width-150, height//2-40))
     gui.blit(minus, (width//2+100, height//2-40))
-
 
     shortTasks = taskFont.render('Short Tasks = ' + str(main.short_tasks), True, (0, 255, 0)) #Initializing text
     longTasks = taskFont.render('Long Tasks = ' + str(main.long_tasks), True, (0, 255, 0)) #Initializing text

@@ -20,7 +20,6 @@ height = gui.get_height()
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
 running = True
 
-
 titleFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 100)
 buttonFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 32)
 taskFont = pygame.font.Font(r'./in-your-face-joffrey/In your face, joffrey!.ttf', 50)
@@ -81,7 +80,6 @@ while running:
         end()
     
     pygame.display.update() #Updates the screen
-
 
 pygame.quit()
 quit() 

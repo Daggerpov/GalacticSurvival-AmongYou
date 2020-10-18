@@ -10,7 +10,6 @@ def end():
     gui.fill((0, 0, 0))
     spacebg()
 
-
     endTitle = titleFont.render("You're Worse Than Daggerpov!", True, green)
     retrybutton = buttonFont.render("Retry", True, blue)
 
@@ -22,7 +21,6 @@ def end():
                 print("Clicked")
                 main.screen = 0
                 
-
     if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
         pygame.draw.rect(gui, red,[width/2, height/2, 140, 40]) 
         
