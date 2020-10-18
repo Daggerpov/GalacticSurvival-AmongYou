@@ -40,7 +40,7 @@ short_tasks = 1
 long_tasks = 0
 
 difficulty = ['easy', 'normal', 'hard', 'extreme']
-index = 0
+index = 1
 
 for i in range(60):
     starx = random.randrange(0, resx)
