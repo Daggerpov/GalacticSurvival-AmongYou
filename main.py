@@ -6,7 +6,7 @@ from startMenu import start
 from endMenu import end
 from setup import select
 from instructions import instruct
-from chart_course_exp import chart_course_exp
+from explanation_screens.chart_course_exp import chart_course_exp
 
 pygame.init()
 
@@ -81,7 +81,12 @@ while running:
         instruct()
 
     elif screen == 3:
-        chart_course_exp()
+        if short_tasks == 1:
+            chart_course_exp()
+            simon_says_exp()
+        elif long_tasks == 1:
+            simon_says_exp()
+
 
     else:
         end()
