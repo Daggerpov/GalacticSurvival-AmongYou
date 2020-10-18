@@ -2,6 +2,10 @@ def select():
     import main
     from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont
 
+    plus = pygame.transform.scale(pygame.image.load("./images/Plus.png"), (100, 80))
+    minus = pygame.transform.scale(pygame.image.load("./images/Minus.png"), (100, 80))
+
+    
 
     blue = (0, 0, 128)
     green = (0, 255, 0)
@@ -84,6 +88,11 @@ def select():
     pygame.draw.polygon(gui, yellow, [(200, height//4-40), (100, height//4), (200, height//4+40)])
     pygame.draw.polygon(gui, yellow, [(width-200, height//1.25-40), (width-100, height//1.25), (width-200, height//1.25+40)])
     pygame.draw.polygon(gui, yellow, [(200, height//1.25-40), (100, height//1.25), (200, height//1.25+40)])
+
+    gui.blit(plus, (0, 0))
+    '''gui.blit(minus, (width//2-200, height//2))
+    gui.blit(plus, (width//2+200, height//2))
+    gui.blit(minus, (width//2+100, height//2))'''
 
     drawBorder(gui, width-200, height//4-40)
     drawBorder(gui, 100, height//4-40)
