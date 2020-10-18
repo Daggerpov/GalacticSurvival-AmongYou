@@ -19,7 +19,7 @@ def instruct():
             if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
                 main.screen = 0
 
-    text1 = instructFont.render('Once you click the "Start Game" button in the main menu, you\'ll be', True, dark_green)
+    text1 = instructFont.render('Once you click the "Setup Game" button in the main menu, you\'ll be', True, dark_green)
     text2 = instructFont.render('given a choice of how many short/long tasks you would like you do.', True, dark_green)
     text3 = instructFont.render('Each task will have a short explanation before it to tell you what', True, dark_green)
     text4 = instructFont.render('the significance behind doing the task is (game lore) and what ', True, dark_green)
