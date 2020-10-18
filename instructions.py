@@ -1,20 +1,23 @@
 def instruct():
-    from main import pygame, gui, width, height, mouse, spacebg, textFont, posText, back, screen
+    import main
+    from main import pygame, gui, width, height, mouse, spacebg, textFont, posText, buttonFont
 
     #colours
     dark_green = (0, 200, 0)
+    green = (0, 255, 0)
+    blue = (0, 0, 128)
 
     gui.fill((0, 0, 0))
     spacebg()
     
-    back()
+    back = buttonFont.render("Back", True, blue)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
            quit()
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if width+35 <= mouse[0] <= width+105 and height+30 <= mouse[1] <= height+70:
-                    screen = 0
+            if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
+                main.screen = 0
 
     text1 = textFont.render('Once you click the "Start Game" button in the main menu, you\'ll be', True, dark_green)
     text2 = textFont.render('given a choice of how many short/long tasks you would like you do.', True, dark_green)
@@ -35,3 +38,12 @@ def instruct():
     gui.blit(text7, posText(text7, width//2, height//2+40))
     gui.blit(text8, posText(text8, width//2, height//2+80))
     gui.blit(text9, posText(text9, width//2, height//2+120))
+
+    #back button in bottom-left of screen
+    if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
+        pygame.draw.rect(gui, green, [10, 10, 70, 40])
+    else:
+        pygame.draw.rect(gui, dark_green, [10, 10, 70, 40])
+    
+    #back button for both setup.py and instructions.py
+    gui.blit(back, (25, 15))

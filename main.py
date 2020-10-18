@@ -59,22 +59,6 @@ def spacebg():
             stary = random.randrange(0, resy)
             stars[i][1] = stary
 
-def back():
-    blue = (0, 0, 128)
-    green = (0, 255, 0)
-    dark_green = (0, 200, 0)
-    
-    back = buttonFont.render("Back", True, blue)
-    
-    #back button in bottom-left of screen
-    if width+35 <= mouse[0] <= width+105 and height+30 <= mouse[1] <= height+70:
-        pygame.draw.rect(gui, green, [width, height, 70, 40])
-    else:
-        pygame.draw.rect(gui, dark_green, [width, height, 70, 40])
-    
-    #back button for both setup.py and instructions.py
-    gui.blit(back, (width, height))
-
 while running:
     pygame.time.delay(50) 
 
