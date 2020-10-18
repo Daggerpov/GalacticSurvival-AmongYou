@@ -1,6 +1,6 @@
 def select():
     import main
-    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont
+    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, posText
 
     plus = pygame.transform.scale(pygame.image.load("./images/Plus.png"), (100, 80))
     minus = pygame.transform.scale(pygame.image.load("./images/Minus.png"), (100, 80))
@@ -89,10 +89,10 @@ def select():
     pygame.draw.polygon(gui, yellow, [(width-200, height//1.25-40), (width-100, height//1.25), (width-200, height//1.25+40)])
     pygame.draw.polygon(gui, yellow, [(200, height//1.25-40), (100, height//1.25), (200, height//1.25+40)])
 
-    gui.blit(plus, (0, 0))
-    '''gui.blit(minus, (width//2-200, height//2))
-    gui.blit(plus, (width//2+200, height//2))
-    gui.blit(minus, (width//2+100, height//2))'''
+    gui.blit(plus, (width//2-150, height//2-40))
+    gui.blit(minus, (100, height//2-40))
+    gui.blit(plus, (width-150, height//2-40))
+    gui.blit(minus, (width//2+100, height//2-40))
 
     drawBorder(gui, width-200, height//4-40)
     drawBorder(gui, 100, height//4-40)
@@ -101,8 +101,8 @@ def select():
 
     shortTasks = taskFont.render('Short Tasks = ' + str(main.short_tasks), True, (0, 255, 0)) #Initializing text
     longTasks = taskFont.render('Long Tasks = ' + str(main.long_tasks), True, (0, 255, 0)) #Initializing text
-    gui.blit(shortTasks, (width//2, height//4)) #Printing text on screen, requires text and position
-    gui.blit(longTasks, (width//2, height//1.25)) #Printing text on screen, requires text and position
+    gui.blit(shortTasks, posText(shortTasks, width//1.25, height//2)) #Printing text on screen, requires text and position
+    gui.blit(longTasks, posText(longTasks, (width//4, height//2)) #Printing text on screen, requires text and position
 
 def drawBorder(screen, bordx, bordy):
     from main import pygame
