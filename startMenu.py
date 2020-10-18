@@ -38,13 +38,14 @@ def start():
     else: 
         pygame.draw.rect(gui, dark_green, [width/2-60, height/4*3, 120, 40]) 
 
-
     #title
     gui.blit(startTitle , posText(startTitle, width//2, 75))
     #start button 
     gui.blit(startbutton , (width/2-50, height/2+5))
     #instructions button
     gui.blit(instructions, (width/2-50, height/4*3+5))
+
+
 
 
 

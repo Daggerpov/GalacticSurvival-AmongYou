@@ -1,15 +1,20 @@
 def instruct():
-    from main import pygame, gui, width, height, mouse, spacebg, textFont, posText
+    from main import pygame, gui, width, height, mouse, spacebg, textFont, posText, back, screen
 
     #colours
     dark_green = (0, 200, 0)
 
     gui.fill((0, 0, 0))
     spacebg()
+    
+    back()
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
            quit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if width+35 <= mouse[0] <= width+105 and height+30 <= mouse[1] <= height+70:
+                    screen = 0
 
     text1 = textFont.render('Once you click the "Start Game" button in the main menu, you\'ll be', True, dark_green)
     text2 = textFont.render('given a choice of how many short/long tasks you would like you do.', True, dark_green)
