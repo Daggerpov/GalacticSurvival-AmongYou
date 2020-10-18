@@ -40,10 +40,6 @@ screen = 0
 short_tasks = 1
 long_tasks = 0
 
-increase_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_short_generic_could_be_collect_item_001_56968.wav")
-decrease_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_tone_marimba_high_pitched_generic_tone_003_56830.wav")
-error_task_sound = pygame.mixer.Sound("./audio/Computer Error Alert-SoundBible.com-783113881.wav")
-
 for i in range(60):
     starx = random.randrange(0, resx)
     stary = random.randrange(0, resy)

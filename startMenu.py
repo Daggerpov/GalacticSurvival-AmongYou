@@ -21,7 +21,7 @@ def start():
                 main.screen = 1
             if width/2-60 <= mouse[0] <= width/2+60 and height/4*3 <= mouse[1] <= height/4*3+40:
                 main.screen = 2
-            
+
     #start rectangle
     if width/2-70 <= mouse[0] <= width/2+70 and height/2 <= mouse[1] <= height/2+40: 
         pygame.draw.rect(gui, green,[width/2-70, height/2, 140, 40]) 

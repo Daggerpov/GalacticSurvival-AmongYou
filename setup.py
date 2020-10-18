@@ -1,6 +1,6 @@
 def select():
     import main
-    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, increase_task_sound, error_task_sound, decrease_task_sound
+    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont
 
 
     blue = (0, 0, 128)
@@ -11,6 +11,10 @@ def select():
     red = (255, 0, 0)
     yellow = (255, 255, 0)
     dark_yellow = (215, 215, 0)
+
+    increase_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_short_generic_could_be_collect_item_001_56968.wav")
+    decrease_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_tone_marimba_high_pitched_generic_tone_003_56830.wav")
+    error_task_sound = pygame.mixer.Sound("./audio/Computer Error Alert-SoundBible.com-783113881.wav")
 
 
     gui.fill((0, 0, 0))
