@@ -6,7 +6,7 @@ GUI = pygame.display.set_mode((500, 500)) #Makes Window
 pygame.display.set_caption("Testing") #Title of Window
 
 #resources = pygame.font.get_fonts()
-#title = pygame.image.load(os.path.join('data', 'GalacticSurvivalTitle.png'))
+image = pygame.image.load("Plus.png")
 green = (0, 255, 0)
 count = 0
 
@@ -46,6 +46,8 @@ while running:
 
     pygame.draw.rect(GUI, green,[x, y, 20, 20])
     
+    GUI.blit(image, (100, 100))
+
     drawStyleRect(GUI)
     pygame.display.update() #Updates the screen
 pygame.quit()
