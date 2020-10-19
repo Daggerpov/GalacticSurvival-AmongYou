@@ -1,5 +1,8 @@
 def chart_course():
-    from .. import main
+    import sys, os
+    os.chdir("../explanation_screens")
+    import main
+    pass
 
     main.gui.fill((115, 194, 251))
 
