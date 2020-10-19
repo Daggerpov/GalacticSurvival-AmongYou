@@ -1,17 +1,22 @@
 import pygame
-import os
+import sys, os
 pygame.init() #Initializes the PyGame module
 
 GUI = pygame.display.set_mode((500, 500)) #Makes Window
 pygame.display.set_caption("Testing") #Title of Window
 
+def reSizeRotate(image, width, height, angle):
+    new_image = pygame.transform.rotate(pygame.transform.scale(image, (width, height)), angle)
+    return new_image
+
+
 #resources = pygame.font.get_fonts()
-image = pygame.image.load("Plus.png")
 green = (0, 255, 0)
 count = 0
 
 x = 0
 y = 0
+angle = 270
 
 rectx = 300
 recty = 300
@@ -34,21 +39,27 @@ while running:
         #if event.type == pygame.MOUSEBUTTONDOWN: #Testing Mouse-Clicked
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                x -= 10
+                x -= 50
+                angle = 90
             if event.key == pygame.K_RIGHT:
-                x += 10
+                x += 50
+                angle = 270
             if event.key == pygame.K_UP:
-                y -= 10
+                y -= 50
+                angle = 0
             if event.key == pygame.K_DOWN:
-                y += 10
+                y += 50
+                angle = 180
         
     GUI.fill((0, 0, 0))   
 
-    pygame.draw.rect(GUI, green,[x, y, 20, 20])
-    
-    GUI.blit(image, (100, 100))
+    #pygame.draw.rect(GUI, green,[x, y, 20, 20])
+    image = reSizeRotate(pygame.image.load("./images/rocket.png"), 100, 80, angle)
+    GUI.blit(image, (x, y))
 
     drawStyleRect(GUI)
     pygame.display.update() #Updates the screen
+
+print(sys.path)
 pygame.quit()
 quit()
