@@ -43,6 +43,8 @@ long_tasks = 0
 difficulty = ['easy', 'normal', 'hard', 'extreme']
 index = 1
 
+angle = 0
+
 for i in range(60):
     starx = random.randrange(0, resx)
     stary = random.randrange(0, resy)
