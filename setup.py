@@ -1,6 +1,6 @@
 def select():
     import main
-    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, posText
+    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, posText, instructFont, username
 
     plus = pygame.transform.scale(pygame.image.load("./images/Plus.png"), (100, 80))
     minus = pygame.transform.scale(pygame.image.load("./images/Minus.png"), (100, 80))
@@ -18,6 +18,8 @@ def select():
 
     back = buttonFont.render("Back", True, blue)
     start = buttonFont.render("Start Game", True, blue)
+
+    textSurface = instructFont.render(username, True, blue)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
@@ -70,20 +72,12 @@ def select():
             
             if width//2-50 <= mouse[0] <= width//2+70 and height//1.25 <= mouse[1] <= height//1.25+40:
                 main.screen = 3
-
-    '''
-    if width-200 <= mouse[0] <= width-100 and height//4-40 <= mouse[1] <= height//4+40: 
-        pygame.draw.polygon(gui, yellow, [(width-200, height//4-40), (width-100, height//4), (width-200, height//4+40)])
-        pygame.draw.polygon(gui, dark_yellow, [(200, height//4-40), (100, height//4), (200, height//4+40)])
-
-    elif 100 <= mouse[0] <= 200 and height//4-40 <= mouse[1] <= height//4+40:
-       pygame.draw.polygon(gui, dark_yellow, [(width-200, height//4-40), (width-100, height//4), (width-200, height//4+40)])
-       pygame.draw.polygon(gui, yellow, [(200, height//4-40), (100, height//4), (200, height//4+40)]) 
-
-    else: 
-        pygame.draw.polygon(gui, dark_yellow, [(width-200, height//4-40), (width-100, height//4), (width-200, height//4+40)])
-        pygame.draw.polygon(gui, dark_yellow, [(200, height//4-40), (100, height//4), (200, height//4+40)])
-    '''
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_BACKSPACE:
+                username = username[:-1]
+            else:
+                username += event.unicode
+        
 
     #back button in bottom-left of screen
     if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
@@ -114,3 +108,12 @@ def select():
     gui.blit(shortTasks, posText(shortTasks, width//4+25, height//2-50)) #Printing text on screen, requires text and position
     gui.blit(longTasks, posText(longTasks, width//1.25-25, height//2-50)) #Printing text on screen, requires text and position
     gui.blit(difficultySlider, posText(difficultySlider, width//2, height//2+100))
+
+    #drawing rect for username text input box
+    if width//2-50 <= mouse[0] <= width//2+70 and height//8-20 <= mouse[1] <= height//8+20:
+        pygame.draw.rect(gui, green, [width//2-50, height//8-20, 120, 40])
+    else:
+        pygame.draw.rect(gui, dark_green, [width//2-50, height//8-20, 120, 40])
+
+    #username text input box
+    gui.blit(textSurface, posText(textSurface, width/2-50, height//8))

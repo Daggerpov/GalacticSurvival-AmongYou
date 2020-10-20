@@ -41,6 +41,8 @@ green = (0, 255, 0)
 
 stars = []
 
+username = ''
+
 screen = 0
 
 short_tasks = 1
