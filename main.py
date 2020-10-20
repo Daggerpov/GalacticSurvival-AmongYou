@@ -42,7 +42,7 @@ green = (0, 255, 0)
 stars = []
 
 username = ''
-userRect = pygame.Rect(width//2-75, height//8-20, 200, 50)
+userRect = pygame.Rect(width//2-125, height//4-20, 200, 50)
 
 screen = 0
 
