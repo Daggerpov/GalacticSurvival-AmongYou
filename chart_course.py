@@ -1,10 +1,12 @@
 def chart_course():
     import main 
-    from main import pygame, gui, width, height, mouse, buttonFont, taskFont, posText
+    from main import pygame, gui, width, height, mouse, buttonFont, taskFont, posText, timer
 
     gui.fill((115, 194, 251)) #Light Blue
 
     main.angle = 180
+
+    timer(15)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:

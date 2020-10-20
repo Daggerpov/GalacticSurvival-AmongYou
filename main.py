@@ -7,10 +7,10 @@ from endMenu import end
 from setup import select
 from instructions import instruct
 
-from explanation_screens.chart_course_exp import chart_course_exp
-from explanation_screens.simon_says_exp import simon_says_exp
-from task_screens.chart_course import chart_course 
-from task_screens.simon_says import simon_says
+from chart_course_exp import chart_course_exp
+from simon_says_exp import simon_says_exp
+from chart_course import chart_course 
+from simon_says import simon_says
 
 
 pygame.init()
@@ -74,6 +74,12 @@ def spacebg():
             # Give it a new y position
             stary = random.randrange(0, resy)
             stars[i][1] = stary
+
+def timer(length):
+    light_red = (200, 0, 0)
+    for i in range(1, length+1):
+        time = instructFont.render(str(i), True, light_red)
+        gui.blit(time, posText(time, width-10, 10))
 
 while running:
     pygame.time.delay(50) 
