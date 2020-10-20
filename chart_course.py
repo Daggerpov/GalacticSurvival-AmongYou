@@ -7,8 +7,6 @@ def chart_course():
     gui.fill(light_blue) 
     grid(width, height, 170.75, 192)
 
-    #sound_timer(15)
-
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
            quit()
