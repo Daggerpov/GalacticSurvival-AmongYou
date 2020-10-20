@@ -69,6 +69,8 @@ angle = 0
 rocketx = 0
 rockety = 0
 
+lose = False
+
 def retry_calculator(index):
     multiplier = 1
 
@@ -84,8 +86,10 @@ def retry_calculator(index):
     retry_amount = (multiplier * short_tasks) + (multiplier * long_tasks * 2)
 
     if retry_amount >= 0:
+        main.lose = False
         return retry_amount
     else:
+        main.lose = True:
         end() 
 
 

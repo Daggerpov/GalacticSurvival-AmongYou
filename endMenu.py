@@ -1,6 +1,6 @@
 def end():
     import main
-    from main import gui, width, height, titleFont, buttonFont, mouse, pygame, posText, spacebg
+    from main import gui, width, height, titleFont, buttonFont, mouse, pygame, posText, spacebg, lose
 
     import random
 
@@ -12,17 +12,8 @@ def end():
     gui.fill((0, 0, 0))
     spacebg()
 
-    which_message = random.randint(0, 5)
+    
 
-    messages = [
-        f"{main.username}, you've doomed us all!", \
-        "Oh no, the ship has been destroyed!", \
-        f"{main.username}, what have you done?!", \
-        "You've failed to save the ship!", \
-        "You're worse than Daggerpov!" \
-        ]
-
-    endTitle = titleFont.render(messages[which_message], True, green)
     retrybutton = buttonFont.render("Retry", True, blue)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
@@ -39,6 +30,20 @@ def end():
     else: 
         pygame.draw.rect(gui, dark_red, [width/2, height/2, 140, 40])
     
-    gui.blit(endTitle , posText(endTitle, width//2, 75))
 
+    if lose == True:
+        which_message = random.randint(0, 5)
+
+        messages = [
+            f"{main.username}, you've doomed us all!", \
+            "Oh no, the ship has been destroyed!", \
+            f"{main.username}, what have you done?!", \
+            "You've failed to save the ship!", \
+            "You're worse than Daggerpov!" \
+            ]
+        endTitle = titleFont.render(messages[which_message], True, green)
+    else:
+        endTitle = titleFont.render("You've saved the ship!", True, green)
+
+    gui.blit(endTitle , posText(endTitle, width//2, 75))
     gui.blit(retrybutton , (width/2+30, height/2+5))
