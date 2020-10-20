@@ -79,7 +79,7 @@ def spacebg():
             stars[i][1] = stary
 
 def timer(length):
-    light_red = (200, 0, 0)
+    dark_red = (200, 0, 0)
     for i in range(1, length+1):
         time = instructFont.render(str(i), True, light_red)
         gui.blit(time, posText(time, width-10, 10))
