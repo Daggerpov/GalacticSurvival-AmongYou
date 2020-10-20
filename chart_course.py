@@ -2,11 +2,14 @@ def chart_course():
     import main 
     from main import pygame, gui, width, height, mouse, buttonFont, taskFont, posText, timer
 
-    gui.fill((115, 194, 251)) #Light Blue
+    light_blue = (115, 194, 251)
+
+    gui.fill(light_blue) 
+    grid(width, height, 170.75, 192)
 
     main.angle = 180
 
-    timer(15)
+    #timer(15)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
@@ -25,14 +28,23 @@ def chart_course():
                 main.rockety += 20
                 main.angle = 180
 
-    rocket = reSizeRotate(pygame.image.load("./images/rocket.png"), 100, 80, main.angle)
+    rocket = reSizeRotate(pygame.image.load("./images/rocket.png"), 171, 192, main.angle)
 
     gui.blit(rocket, (main.rocketx, main.rockety))
 
 def reSizeRotate(image, width, height, angle):
+    from main import pygame
     new_image = pygame.transform.rotate(pygame.transform.scale(image, (width, height)), angle)
     return new_image
 
+def grid(width, height, image_width, image_height):
+    import main
+    from main import pygame
+
+    for x in range(width):
+        for y in range(height):
+            rect = pygame.Rect(x*image_width, y*image_height, image_width, image_height)
+            pygame.draw.rect(main.gui, (255, 255, 255), rect, 1)
 '''def draw_dashed_line(surf, color, start_pos, end_pos, width=1, dash_length=10):
     import numpy
     import math

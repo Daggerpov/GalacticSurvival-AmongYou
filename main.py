@@ -81,7 +81,7 @@ def timer(length):
     for i in range(1, length+1):
         time = instructFont.render(str(i), True, light_red)
         gui.blit(time, posText(time, width-10, 10))
-        time.sleep(1)
+        #time.sleep(1)
 
 while running:
     pygame.time.delay(50) 
@@ -99,11 +99,11 @@ while running:
 
     elif screen == 3:
         if short_tasks == 1:
-            chart_course_exp()
-            simon_says_exp()
+            chart_course()
+            #chart_course_exp()
+            #simon_says_exp()
         elif long_tasks == 1:
             simon_says_exp()
-
 
     else:
         end()
