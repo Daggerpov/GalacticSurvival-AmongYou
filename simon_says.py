@@ -36,7 +36,7 @@ def simon_says():
 
     pattern = []
     for i in range(5):
-        pattern.append(random.randint(0, 9))
+        pattern.append(random.randint(0, 8))
         for j in pattern:
             P[j] = blue
             pygame.time.delay(500)
@@ -92,6 +92,6 @@ def simon_says():
     pygame.draw.rect(gui, col4, [309, 309, image_size, image_size]) 
     pygame.draw.rect(gui, col5, [464, 309, image_size, image_size])
     pygame.draw.rect(gui, col6, [154, 464, image_size, image_size]) 
-    pygame.draw.rect(gui, col7 [309, 464, image_size, image_size]) 
+    pygame.draw.rect(gui, col7, [309, 464, image_size, image_size]) 
     pygame.draw.rect(gui, col8, [464, 464, image_size, image_size])
     
