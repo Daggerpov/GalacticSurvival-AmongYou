@@ -9,6 +9,9 @@ def reSizeRotate(image, width, height, angle):
     new_image = pygame.transform.rotate(pygame.transform.scale(image, (width, height)), angle)
     return new_image
 
+clock = pygame.time.Clock()
+timer = 10  # Decrease this to count down.
+dt = 0  # Delta time (time since last tick).
 
 #resources = pygame.font.get_fonts()
 green = (0, 255, 0)
@@ -50,8 +53,17 @@ while running:
             if event.key == pygame.K_DOWN:
                 y += 50
                 angle = 180
-        
+
+    
+
     GUI.fill((0, 0, 0))   
+
+    txt = font.render(str(round(timer)), True, green)
+    GUI.blit(txt, (500//2, 0))
+
+    timer -= dt
+    if timer <= 0:
+        timer = 10
 
     #pygame.draw.rect(GUI, green,[x, y, 20, 20])
     image = reSizeRotate(pygame.image.load("./images/rocket.png"), 100, 80, angle)
@@ -59,7 +71,7 @@ while running:
 
     drawStyleRect(GUI)
     pygame.display.update() #Updates the screen
+    dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
 
-print(sys.path)
 pygame.quit()
 quit()
