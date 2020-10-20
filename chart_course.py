@@ -1,11 +1,10 @@
 def chart_course():
-    import sys, os
-    from ..main import *
-    pass
+    import main 
+    from main import *
 
-    main.gui.fill((115, 194, 251))
+    gui.fill((115, 194, 251))
 
-    main.angle = 180
+    angle = 180
 
     rocket = reSizeRotate(pygame.image.load("./images/rocket.png"), 100, 80, main.angle)
 
