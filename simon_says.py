@@ -1,2 +1,3 @@
 def simon_says():
-    pass
+    import main 
+    from main import pygame, gui, width, height, mouse, buttonFont, posText, timer
