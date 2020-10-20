@@ -113,7 +113,7 @@ def select():
     pygame.draw.rect(gui, green, main.userRect)
     
     #username text input box
-    gui.blit(textSurface, (main.userRect.x + 5, main.userRect.y + 2.5))
+    gui.blit(textSurface, (main.userRect.x + 5, main.userRect.y))
 
     main.userRect.w = textSurface.get_width() + 10
 
