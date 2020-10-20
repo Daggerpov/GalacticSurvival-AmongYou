@@ -75,6 +75,7 @@ def select():
                 if main.username != '':
                     main.screen = 3
                 else:
+                    pygame.mixer.Sound.play(error_task_sound)
                     continue
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_BACKSPACE:
