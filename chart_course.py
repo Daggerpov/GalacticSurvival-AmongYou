@@ -5,7 +5,7 @@ def chart_course():
     light_blue = (115, 194, 251)
 
     gui.fill(light_blue) 
-    #grid(width, height, 171, 192)
+    grid(width, height, 170.75, 192)
 
     #timer(15)
 
@@ -39,10 +39,10 @@ def grid(width, height, image_width, image_height):
     import main
     from main import pygame
 
-    for x in range(width):
-        for y in range(height):
+    for x in range(int(width//image_width)):
+        for y in range(int(height//image_height)):
             rect = pygame.Rect(x*image_width, y*image_height, image_width, image_height)
-            pygame.draw.rect(main.gui, (255, 255, 255), rect, 1)
+            pygame.draw.rect(main.gui, (255, 255, 255), rect, 2)
 
 '''def draw_dashed_line(surf, color, start_pos, end_pos, width=1, dash_length=10):
     import numpy
