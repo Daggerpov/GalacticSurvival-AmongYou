@@ -79,6 +79,12 @@ def spacebg():
             stary = random.randrange(0, resy)
             stars[i][1] = stary
 
+def sound_timer(total_time):
+    countdown_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_fast_collect_item_002_55830.wav")
+    for i in range(total_time):
+        pygame.time.delay(1000)
+        pygame.mixer.Sound.play(countdown_sound)
+
 while running:
     pygame.time.delay(10) 
 

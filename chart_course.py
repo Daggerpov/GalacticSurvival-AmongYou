@@ -1,12 +1,13 @@
 def chart_course():
     import main 
-    from main import pygame, gui, width, height, mouse, buttonFont, posText
+    from main import pygame, gui, width, height, mouse, buttonFont, posText, sound_timer
 
     light_blue = (115, 194, 251)
 
     gui.fill(light_blue) 
     grid(width, height, 170.75, 192)
 
+    sound_timer(15)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
