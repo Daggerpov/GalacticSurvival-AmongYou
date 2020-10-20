@@ -110,11 +110,9 @@ def select():
     gui.blit(difficultySlider, posText(difficultySlider, width//2, height//2+100))
 
     #drawing rect for username text input box
-    pygame.draw.rect(gui, green, main.userRect)
+    pygame.draw.rect(gui, green, [main.userRectx, main.userRecty, textSurface.get_width() + 10, 50])
     
     #username text input box
-    gui.blit(textSurface, (main.userRect.x + 5, main.userRect.y))
-
-    main.userRect.w = textSurface.get_width() + 10
+    gui.blit(textSurface, (main.userRectx + 5, main.userRecty))
 
     gui.blit(textPrompt, posText(textPrompt, width//2, 75))
