@@ -1,6 +1,7 @@
 import pygame
 import sys
 import random
+import time
 
 from startMenu import start
 from endMenu import end
@@ -80,6 +81,7 @@ def timer(length):
     for i in range(1, length+1):
         time = instructFont.render(str(i), True, light_red)
         gui.blit(time, posText(time, width-10, 10))
+        time.sleep(1)
 
 while running:
     pygame.time.delay(50) 
