@@ -1,5 +1,5 @@
 def repair_drill():
     import sys, os
-    os.chdir("../explanation_screens")
+    os.chdir("../task_screens")
     import main
     pass

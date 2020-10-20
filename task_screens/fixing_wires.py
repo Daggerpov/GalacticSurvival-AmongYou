@@ -1,5 +1,5 @@
 def fixing_wires():
     import sys, os
-    os.chdir("../explanation_screens")
+    os.chdir("../task_screens")
     import main
     pass
