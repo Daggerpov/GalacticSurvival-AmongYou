@@ -1,6 +1,6 @@
 def select():
     import main
-    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, posText, instructFont, titleFont
+    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, posText, instructFont, titleFont, retries
 
     plus = pygame.transform.scale(pygame.image.load("./images/Plus.png"), (100, 80))
     minus = pygame.transform.scale(pygame.image.load("./images/Minus.png"), (100, 80))

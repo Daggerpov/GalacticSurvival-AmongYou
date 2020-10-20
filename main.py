@@ -69,6 +69,21 @@ angle = 0
 rocketx = 0
 rockety = 0
 
+def retry_calculator(index):
+    multiplier = 1
+
+    if index == 0:
+        multiplier = 2
+    elif index == 1:
+        multiplier = 1
+    elif index == 2:
+        multiplier = 0.5
+    elif index == 3:
+        multiplier = 0
+
+    return (multiplier * short_tasks) + (multiplier * long_tasks * 2)
+
+
 for i in range(60):
     starx = random.randrange(0, resx)
     stary = random.randrange(0, resy)
@@ -96,6 +111,8 @@ while running:
     pygame.time.delay(10) 
 
     mouse = pygame.mouse.get_pos()
+
+    retries = retry_calculator(index)
 
     if screen == 0:
         start()

@@ -1,6 +1,6 @@
 def simon_says_exp():
     import main
-    from main import pygame, gui, width, height, mouse, spacebg, instructFont, posText, buttonFont
+    from main import pygame, gui, width, height, mouse, spacebg, instructFont, posText, buttonFont, retries, titleFont
 
     #colours
     dark_green = (0, 200, 0)
@@ -11,6 +11,8 @@ def simon_says_exp():
     spacebg()
 
     proceedButton = buttonFont.render("Proceed", True, blue)
+    retryAmount = titleFont.render(f"Retries: {retries}", True, green)
+
     
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
@@ -34,3 +36,5 @@ def simon_says_exp():
 
     #proceed button
     gui.blit(proceedButton, posText(proceedButton, width//2+10, height//1.25))
+
+    gui.blit(retryAmount, posText(retryAmount, width//2, 75))
