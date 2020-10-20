@@ -1,6 +1,6 @@
 def chart_course():
     import sys, os
-    os.chdir("../task_screens")
+    os.path.normpath(os.getcwd() + os.sep + os.pardir)
     import main
     pass
 
