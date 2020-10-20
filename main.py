@@ -26,6 +26,18 @@ height = gui.get_height()
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
 running = True
 
+clock = pygame.time.Clock()
+timer = 30  # Decrease this to count down.
+dt = 0  # Delta time (time since last tick).
+
+def time():
+    import main
+    from main import gui, pygame, width
+    main.dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
+    time = instructFont.render(str(round(main.timer)), True, blue)
+    gui.blit(time, (width-100, 0))
+    main.timer -= main.dt
+
 titleFont = pygame.font.Font(r'./fonts/In your face, joffrey!.ttf', 100)
 buttonFont = pygame.font.Font(r'./fonts/In your face, joffrey!.ttf', 32)
 taskFont = pygame.font.Font(r'./fonts/In your face, joffrey!.ttf', 50)
@@ -37,6 +49,7 @@ def posText(text, x, y):
     return titleRect
 
 green = (0, 255, 0)
+blue = (0, 0, 255)
 
 stars = []
 
@@ -102,6 +115,7 @@ while running:
     elif screen == 3.5:
         if short_tasks == 1:
             chart_course()
+            time()
         elif long_tasks == 1:
             simon_says()
 

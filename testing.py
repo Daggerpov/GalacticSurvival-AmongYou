@@ -58,6 +58,7 @@ while running:
 
     GUI.fill((0, 0, 0))   
 
+    dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
     txt = font.render(str(round(timer)), True, green)
     GUI.blit(txt, (500//2, 0))
 
@@ -71,7 +72,7 @@ while running:
 
     drawStyleRect(GUI)
     pygame.display.update() #Updates the screen
-    dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
+    
 
 pygame.quit()
 quit()
