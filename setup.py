@@ -115,4 +115,4 @@ def select():
     #username text input box
     gui.blit(textSurface, (main.userRectx + 5, main.userRecty))
 
-    gui.blit(textPrompt, posText(textPrompt, width//2, 75))
+    gui.blit(textPrompt, posText(textPrompt, width//2+20, 75))
