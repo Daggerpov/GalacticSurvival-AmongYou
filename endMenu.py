@@ -1,6 +1,6 @@
 def end():
     import main
-    from main import gui, width, height, titleFont, buttonFont, mouse, pygame, posText, spacebg, username
+    from main import gui, width, height, titleFont, buttonFont, mouse, pygame, posText, spacebg
 
     import random
 
@@ -15,9 +15,9 @@ def end():
     which_message = random.randint(0, 5)
 
     messages = [
-        f"{username}, you've doomed us all!", \
+        f"{main.username}, you've doomed us all!", \
         "Oh no, the ship has been destroyed!", \
-        f"{username}, what have you done?!", \
+        f"{main.username}, what have you done?!", \
         "You've failed to save the ship!", \
         "You're worse than Daggerpov!" \
         ]

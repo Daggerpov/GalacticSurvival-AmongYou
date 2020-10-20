@@ -72,7 +72,10 @@ def select():
                     pygame.mixer.Sound.play(error_task_sound)
             
             if width//2-50 <= mouse[0] <= width//2+70 and height//1.25 <= mouse[1] <= height//1.25+40:
-                main.screen = 3
+                if main.username != '':
+                    main.screen = 3
+                else:
+                    continue
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_BACKSPACE:
                 main.username = main.username[:-1]
@@ -109,10 +112,10 @@ def select():
     gui.blit(longTasks, posText(longTasks, width//1.25-25, height//2-50)) #Printing text on screen, requires text and position
     gui.blit(difficultySlider, posText(difficultySlider, width//2, height//2+100))
 
-    #drawing rect for username text input box
+    #drawing rect for main.username text input box
     pygame.draw.rect(gui, green, [main.userRectx, main.userRecty, textSurface.get_width() + 10, 50])
     
-    #username text input box
+    #main.username text input box
     gui.blit(textSurface, (main.userRectx + 5, main.userRecty))
 
     gui.blit(textPrompt, posText(textPrompt, width//2+20, 75))
