@@ -1,6 +1,6 @@
 def chart_course():
     import main 
-    from main import pygame, gui, width, height, mouse, buttonFont, posText, sound_timer
+    from main import pygame, gui, width, height, mouse, buttonFont, posText
 
     light_blue = (115, 194, 251)
 
