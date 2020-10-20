@@ -87,7 +87,7 @@ def timer(length):
         #time.sleep(1)
 
 while running:
-    pygame.time.delay(50) 
+    pygame.time.delay(10) 
 
     mouse = pygame.mouse.get_pos()
 

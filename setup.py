@@ -1,6 +1,6 @@
 def select():
     import main
-    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, posText, instructFont
+    from main import pygame, gui, width, height, mouse, spacebg, buttonFont, taskFont, posText, instructFont, titleFont
 
     plus = pygame.transform.scale(pygame.image.load("./images/Plus.png"), (100, 80))
     minus = pygame.transform.scale(pygame.image.load("./images/Minus.png"), (100, 80))
@@ -20,6 +20,7 @@ def select():
     start = buttonFont.render("Start Game", True, blue)
 
     textSurface = instructFont.render(main.username, True, blue)
+    textPrompt = titleFont.render("Enter your username: ", True, green)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
@@ -76,8 +77,7 @@ def select():
             if event.key == pygame.K_BACKSPACE:
                 main.username = main.username[:-1]
             else:
-                main.username += event.unicode
-        
+                main.username += event.unicode        
 
     #back button in bottom-left of screen
     if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
@@ -116,3 +116,5 @@ def select():
     gui.blit(textSurface, (main.userRect.x + 5, main.userRect.y + 2.5))
 
     main.userRect.w = textSurface.get_width() + 10
+
+    gui.blit(textPrompt, posText(textPrompt, width//2, 75))
