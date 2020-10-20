@@ -81,7 +81,12 @@ def retry_calculator(index):
     elif index == 3:
         multiplier = 0
 
-    return (multiplier * short_tasks) + (multiplier * long_tasks * 2)
+    retry_amount = (multiplier * short_tasks) + (multiplier * long_tasks * 2)
+
+    if retry_amount >= 0:
+        return retry_amount
+    else:
+        end() 
 
 
 for i in range(60):
