@@ -99,8 +99,8 @@ while running:
 
     elif screen == 3:
         if short_tasks == 1:
-            chart_course()
-            #chart_course_exp()
+            #chart_course()
+            chart_course_exp()
             #simon_says_exp()
         elif long_tasks == 1:
             simon_says_exp()
