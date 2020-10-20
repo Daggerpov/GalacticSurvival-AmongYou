@@ -6,7 +6,12 @@ from startMenu import start
 from endMenu import end
 from setup import select
 from instructions import instruct
+
 from explanation_screens.chart_course_exp import chart_course_exp
+from explanation_screens.simon_says_exp import simon_says_exp
+from task_screens.chart_course import chart_course 
+from task_screens.simon_says import simon_says
+
 
 pygame.init()
 
