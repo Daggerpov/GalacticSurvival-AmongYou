@@ -11,7 +11,7 @@ from chart_course_exp import chart_course_exp
 from simon_says_exp import simon_says_exp
 from chart_course import chart_course 
 from simon_says import simon_says
-
+from retry_calculator import retry_calculator
 
 pygame.init()
 
@@ -70,28 +70,6 @@ rocketx = 0
 rockety = 0
 
 lose = False
-
-def retry_calculator(index):
-    multiplier = 1
-
-    if index == 0:
-        multiplier = 2
-    elif index == 1:
-        multiplier = 1
-    elif index == 2:
-        multiplier = 0.5
-    elif index == 3:
-        multiplier = 0
-
-    retry_amount = (multiplier * short_tasks) + (multiplier * long_tasks * 2)
-
-    if retry_amount >= 0:
-        main.lose = False
-        return retry_amount
-    else:
-        main.lose = True:
-        end() 
-
 
 for i in range(60):
     starx = random.randrange(0, resx)
