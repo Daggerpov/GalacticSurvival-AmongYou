@@ -49,6 +49,8 @@ difficulty = ['easy', 'normal', 'hard', 'extreme']
 index = 1
 
 angle = 0
+rocketx = 80
+rockety = 80
 
 for i in range(60):
     starx = random.randrange(0, resx)

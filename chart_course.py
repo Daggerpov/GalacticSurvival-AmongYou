@@ -1,12 +1,31 @@
 def chart_course():
     import main 
-    from main import *
+    from main import pygame, gui, width, height, mouse, buttonFont, taskFont, posText
 
-    gui.fill((115, 194, 251))
+    gui.fill((115, 194, 251)) #Light Blue
 
-    angle = 180
+    main.angle = 180
+
+    for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
+        if event.type == pygame.QUIT:
+           quit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                main.rocketx -= 20
+                main.angle = 90
+            if event.key == pygame.K_RIGHT:
+                main.rocketx += 20
+                main.angle = 270
+            if event.key == pygame.K_UP:
+                main.rockety -= 20
+                main.angle = 0
+            if event.key == pygame.K_DOWN:
+                main.rockety += 20
+                main.angle = 180
 
     rocket = reSizeRotate(pygame.image.load("./images/rocket.png"), 100, 80, main.angle)
+
+    gui.blit(rocket, (main.rocketx, main.rockety))
 
 def reSizeRotate(image, width, height, angle):
     new_image = pygame.transform.rotate(pygame.transform.scale(image, (width, height)), angle)
