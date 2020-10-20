@@ -7,23 +7,23 @@ def chart_course():
     gui.fill(light_blue) 
     grid(width, height, 170.75, 192)
 
-    sound_timer(15)
+    #sound_timer(15)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
            quit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                main.rocketx -= 20
+                main.rocketx -= 170.75
                 main.angle = 90
             if event.key == pygame.K_RIGHT:
-                main.rocketx += 20
+                main.rocketx += 170.75
                 main.angle = 270
             if event.key == pygame.K_UP:
-                main.rockety -= 20
+                main.rockety -= 192
                 main.angle = 0
             if event.key == pygame.K_DOWN:
-                main.rockety += 20
+                main.rockety += 192
                 main.angle = 180
 
     rocket = reSizeRotate(pygame.image.load("./images/rocket.png"), 171, 192, main.angle)

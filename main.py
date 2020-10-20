@@ -53,8 +53,8 @@ difficulty = ['easy', 'normal', 'hard', 'extreme']
 index = 1
 
 angle = 0
-rocketx = 80
-rockety = 80
+rocketx = 0
+rockety = 0
 
 for i in range(60):
     starx = random.randrange(0, resx)
@@ -82,7 +82,7 @@ def spacebg():
 def sound_timer(total_time):
     countdown_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_fast_collect_item_002_55830.wav")
     for i in range(total_time):
-        pygame.time.delay(1000)
+        pygame.time.wait(1000)
         pygame.mixer.Sound.play(countdown_sound)
 
 while running:
