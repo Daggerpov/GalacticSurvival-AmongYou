@@ -1,7 +1,6 @@
 def chart_course():
     import sys, os
-    os.path.normpath(os.getcwd() + os.sep + os.pardir)
-    import main
+    from ..main import *
     pass
 
     main.gui.fill((115, 194, 251))
