@@ -42,6 +42,7 @@ green = (0, 255, 0)
 stars = []
 
 username = ''
+userRect = pygame.Rect(width//2-75, height//8-20, 200, 50)
 
 screen = 0
 
@@ -81,7 +82,7 @@ def spacebg():
 def timer(length):
     dark_red = (200, 0, 0)
     for i in range(1, length+1):
-        time = instructFont.render(str(i), True, light_red)
+        time = instructFont.render(str(i), True, dark_red)
         gui.blit(time, posText(time, width-10, 10))
         #time.sleep(1)
 

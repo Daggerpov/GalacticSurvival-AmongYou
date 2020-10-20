@@ -110,10 +110,9 @@ def select():
     gui.blit(difficultySlider, posText(difficultySlider, width//2, height//2+100))
 
     #drawing rect for username text input box
-    if width//2-50 <= mouse[0] <= width//2+70 and height//8-20 <= mouse[1] <= height//8+20:
-        pygame.draw.rect(gui, green, [width//2-50, height//8-20, 120, 40])
-    else:
-        pygame.draw.rect(gui, dark_green, [width//2-50, height//8-20, 120, 40])
-
+    pygame.draw.rect(gui, green, main.userRect)
+    
     #username text input box
-    gui.blit(textSurface, posText(textSurface, width/2-50, height//8))
+    gui.blit(textSurface, (main.userRect.x + 5, main.userRect.y + 2.5))
+
+    main.userRect.w = textSurface.get_width() + 10
