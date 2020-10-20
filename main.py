@@ -62,7 +62,7 @@ screen = 0
 short_tasks = 1
 long_tasks = 0
 
-difficulty = ['easy', 'normal', 'hard', 'extreme']
+difficulty = ('easy', 'normal', 'hard', 'extreme')
 index = 1
 
 angle = 0

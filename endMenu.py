@@ -14,7 +14,7 @@ def end():
 
     
 
-    retrybutton = buttonFont.render("Retry", True, blue)
+    menuButton = buttonFont.render("Return to Main Menu", True, blue)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
@@ -23,9 +23,15 @@ def end():
             if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
                 print("Clicked")
                 main.screen = 0
+                main.username = ''
+                main.short_tasks = 1
+                main.long_tasks = 0
+                main.index = 1
+                main.lose = False 
+
                 
-    if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
-        pygame.draw.rect(gui, red,[width/2, height/2, 140, 40]) 
+    if width/2-60 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
+        pygame.draw.rect(gui, red,[width/2, height/2, 200, 40]) 
         
     else: 
         pygame.draw.rect(gui, dark_red, [width/2, height/2, 140, 40])
@@ -46,4 +52,4 @@ def end():
         endTitle = titleFont.render("You've saved the ship!", True, green)
 
     gui.blit(endTitle , posText(endTitle, width//2, 75))
-    gui.blit(retrybutton , (width/2+30, height/2+5))
+    gui.blit(menuButton , (width/2+40, height/2+5))
