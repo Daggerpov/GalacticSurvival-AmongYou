@@ -22,7 +22,7 @@ def end():
         "You're worse than Daggerpov!" \
         ]
 
-    endTitle = titleFont.render(f"{messages[which_message]}", True, green)
+    endTitle = titleFont.render(messages[which_message], True, green)
     retrybutton = buttonFont.render("Retry", True, blue)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
