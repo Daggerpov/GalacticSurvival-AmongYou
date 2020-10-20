@@ -5,7 +5,7 @@ def chart_course():
     light_blue = (115, 194, 251)
 
     gui.fill(light_blue) 
-    grid(width, height, 171, 192)
+    #grid(width, height, 171, 192)
 
     #timer(15)
 
