@@ -42,7 +42,7 @@ height = gui.get_height()
 pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
 running = True
 
-clock = pygame.time.Clock()
+'''clock = pygame.time.Clock()
 timer = 30  # Decrease this to count down.
 dt = 0  # Delta time (time since last tick).
 
@@ -52,7 +52,7 @@ def time():
     main.dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
     time = instructFont.render(str(round(main.timer)), True, blue)
     gui.blit(time, (width-100, 0))
-    main.timer -= main.dt
+    main.timer -= main.dt'''
 
 titleFont = pygame.font.Font(r'./fonts/In your face, joffrey!.ttf', 100)
 buttonFont = pygame.font.Font(r'./fonts/In your face, joffrey!.ttf', 32)
@@ -142,11 +142,25 @@ while running:
         rocketx = 0
         rockety = random.choice([0, 192, 384, 576])
         endPos = [1195.25, random.choice([0, 192, 384, 576])]
+        timer = 15  # Decrease this to count down.
         chart_course_exp()
 
     elif screen == 3.5 and short_tasks == 1:
-        time()
+        clock = pygame.time.Clock()
+        dt = 0  # Delta time (time since last tick).
+
+        def time():
+            import main
+            from main import gui, pygame, width
+            main.dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
+            time = instructFont.render(str(round(main.timer)), True, blue)
+            gui.blit(time, (width-100, 0))
+            main.timer -= main.dt
         chart_course()
+        time()
+        if timer < 0:
+            fails += 1
+            screen = 3
 
     elif screen == 4 and long_tasks == 1:
         clicks = 0
@@ -179,11 +193,25 @@ while running:
                 pattern.remove(silver)
 
         random.shuffle(pattern)
+        timer = 30  # Decrease this to count down.
         simon_says_exp()
     
     elif screen == 4.5 and long_tasks == 1:
-        time()
+        clock = pygame.time.Clock()
+        dt = 0  # Delta time (time since last tick).
+
+        def time():
+            import main
+            from main import gui, pygame, width
+            main.dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
+            time = instructFont.render(str(round(main.timer)), True, blue)
+            gui.blit(time, (width-100, 0))
+            main.timer -= main.dt
         simon_says()
+        time()
+        if timer < 0:
+            fails += 1
+            screen = 4
 
     if game_end == True and screen == 5:
         end()
