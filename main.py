@@ -185,11 +185,11 @@ while running:
         clicks = 0
         simon_says_exp()
     
-    else:
+    elif screen == 4.5 and long_tasks == 1:
         time()
         simon_says()
 
-    if game_end == True:
+    if game_end == True and screen == 5:
         end()
     
     pygame.display.update() #Updates the screen

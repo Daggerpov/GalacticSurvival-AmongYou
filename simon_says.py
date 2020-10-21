@@ -128,6 +128,7 @@ def simon_says():
 
     if main.clicks == 5:
         main.game_end = True
+        main.screen = 5
 
     pygame.draw.rect(gui, Pcol0, [774, 154, image_size, image_size]) 
     pygame.draw.rect(gui, Pcol1, [929, 154, image_size, image_size]) 
