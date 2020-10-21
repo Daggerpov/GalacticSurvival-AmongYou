@@ -1,4 +1,4 @@
-# ICS3U-firstGame
+# ICS3U-Galactic Survival: Among You
 
 This game is meant to be a Python rendition of the ultra-popular mobile/PC video games Among Us. 
 Some links below will direct you to google files pertaining to this project made for Ms. Luce's 
