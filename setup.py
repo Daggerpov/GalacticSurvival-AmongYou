@@ -9,9 +9,7 @@ def select():
     green = (0, 255, 0)
     dark_green = (0, 200, 0)
 
-    increase_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_short_generic_could_be_collect_item_001_56968.wav")
-    decrease_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_tone_marimba_high_pitched_generic_tone_003_56830.wav")
-    error_task_sound = pygame.mixer.Sound("./audio/Computer Error Alert-SoundBible.com-783113881.wav")
+    
 
     gui.fill((0, 0, 0))
     spacebg()
@@ -32,50 +30,50 @@ def select():
             if width//2-150 <= mouse[0] <= width//2-50 and height//2-90 <= mouse[1] <= height//2-10:
                 if main.short_tasks == 0:
                     main.short_tasks += 1
-                    pygame.mixer.Sound.play(increase_task_sound)
+                    pygame.mixer.Sound.play(main.increase_task_sound)
                 else:
-                    pygame.mixer.Sound.play(error_task_sound)
+                    pygame.mixer.Sound.play(main.error_task_sound)
             
             if 100 <= mouse[0] <= 200 and height//2-90 <= mouse[1] <= height//2-10:
                 if main.short_tasks == 1 and main.long_tasks == 1:
                     main.short_tasks -= 1
-                    pygame.mixer.Sound.play(decrease_task_sound)
+                    pygame.mixer.Sound.play(main.decrease_task_sound)
                 else:
-                    pygame.mixer.Sound.play(error_task_sound)
+                    pygame.mixer.Sound.play(main.error_task_sound)
 
             if width-150 <= mouse[0] <= width-50 and height//2-90 <= mouse[1] <= height//2-10:
                 if main.long_tasks == 0:
                     main.long_tasks += 1
-                    pygame.mixer.Sound.play(increase_task_sound)
+                    pygame.mixer.Sound.play(main.increase_task_sound)
                 else:
-                    pygame.mixer.Sound.play(error_task_sound)
+                    pygame.mixer.Sound.play(main.error_task_sound)
 
             if width//2+100 <= mouse[0] <= width//2+200 and height//2-90 <= mouse[1] <= height//2-10:
                 if main.long_tasks == 1 and main.short_tasks == 1:
                     main.long_tasks -= 1
-                    pygame.mixer.Sound.play(decrease_task_sound)
+                    pygame.mixer.Sound.play(main.decrease_task_sound)
                 else:
-                    pygame.mixer.Sound.play(error_task_sound)
+                    pygame.mixer.Sound.play(main.error_task_sound)
             
             if width//2+250 <= mouse[0] <= width//2+350 and height//2+55 <= mouse[1] <= height//2+135:
                 if main.index < 3:
                     main.index += 1
-                    pygame.mixer.Sound.play(increase_task_sound)
+                    pygame.mixer.Sound.play(main.increase_task_sound)
                 else:
-                    pygame.mixer.Sound.play(error_task_sound)
+                    pygame.mixer.Sound.play(main.error_task_sound)
 
             if width//2-325 <= mouse[0] <= width//2-225 and height//2+55 <= mouse[1] <= height//2+135:
                 if main.index > 0:
                     main.index -= 1
-                    pygame.mixer.Sound.play(decrease_task_sound)
+                    pygame.mixer.Sound.play(main.decrease_task_sound)
                 else:
-                    pygame.mixer.Sound.play(error_task_sound)
+                    pygame.mixer.Sound.play(main.error_task_sound)
             
             if width//2-50 <= mouse[0] <= width//2+70 and height//1.25 <= mouse[1] <= height//1.25+40:
                 if main.username != '':
                     main.screen = 3
                 else:
-                    pygame.mixer.Sound.play(error_task_sound)
+                    pygame.mixer.Sound.play(main.error_task_sound)
                     continue
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_BACKSPACE:

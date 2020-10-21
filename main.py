@@ -16,6 +16,51 @@ from retry_calculator import retry_calculator
 
 pygame.init()
 
+increase_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_short_generic_could_be_collect_item_001_56968.wav")
+decrease_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_tone_marimba_high_pitched_generic_tone_003_56830.wav")
+error_task_sound = pygame.mixer.Sound("./audio/Computer Error Alert-SoundBible.com-783113881.wav")
+
+#generating pattern for simon says 
+
+pink = (255,192,203)
+red = (255, 0, 0)
+yellow = (255, 255, 0)
+green = (0, 128, 0)
+blue = (0, 0, 255)    
+silver = (192, 192, 192)
+
+colour_names = {(255, 192, 203):'pink', (255, 255, 0):'yellow', (0, 0, 255):'blue', (0, 128, 0):'green', (255, 0, 0):'red'}
+
+Pcol0 = silver
+Pcol1 = silver
+Pcol2 = silver
+Pcol3 = silver
+Pcol4 = silver
+Pcol5 = silver
+Pcol6 = silver
+Pcol7 = silver
+Pcol8 = silver
+
+
+ai = [silver, silver, silver, silver, silver, silver, silver, silver, silver]
+
+colours = [red, green, pink, blue, yellow, silver, silver, silver, silver]
+for i in range(9):
+    x = random.choice(colours)
+    ai[i] = x
+    colours.remove(x)
+
+count = 0
+pattern = ai
+pattern = list(pattern)
+while True:
+    if silver not in pattern:        
+        break
+    else:
+        pattern.remove(silver)
+    
+
+
 #Resolution dimensions
 resx = 1366
 resy = 768
@@ -65,6 +110,8 @@ long_tasks = 0
 
 difficulty = ('easy', 'normal', 'hard', 'extreme')
 index = 1
+
+
 
 angle = 0
 rocketx = 0

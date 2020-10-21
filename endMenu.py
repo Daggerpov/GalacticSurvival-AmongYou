@@ -19,7 +19,6 @@ def end():
            quit()
         if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
             if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-                print("Clicked")
                 main.screen = 0
                 main.username = ''
                 main.short_tasks = 1
