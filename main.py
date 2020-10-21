@@ -25,41 +25,12 @@ error_task_sound = pygame.mixer.Sound("./audio/Computer Error Alert-SoundBible.c
 pink = (255,192,203)
 red = (255, 0, 0)
 yellow = (255, 255, 0)
-green = (0, 128, 0)
 blue = (0, 0, 255)    
 silver = (192, 192, 192)
+green = (0, 255, 0)
+blue = (0, 0, 255)
 
-colour_names = {(255, 192, 203):'pink', (255, 255, 0):'yellow', (0, 0, 255):'blue', (0, 128, 0):'green', (255, 0, 0):'red'}
-
-Pcol0 = silver
-Pcol1 = silver
-Pcol2 = silver
-Pcol3 = silver
-Pcol4 = silver
-Pcol5 = silver
-Pcol6 = silver
-Pcol7 = silver
-Pcol8 = silver
-
-
-ai = [silver, silver, silver, silver, silver, silver, silver, silver, silver]
-
-colours = [red, green, pink, blue, yellow, silver, silver, silver, silver]
-for i in range(9):
-    x = random.choice(colours)
-    ai[i] = x
-    colours.remove(x)
-
-count = 0
-pattern = ai
-pattern = list(pattern)
-while True:
-    if silver not in pattern:        
-        break
-    else:
-        pattern.remove(silver)
-
-random.shuffle(pattern)
+colour_names = {(255, 192, 203):'pink', (255, 255, 0):'yellow', (0, 0, 255):'blue', (0, 255, 0):'green', (255, 0, 0):'red'}
 
 #Resolution dimensions
 resx = 1366
@@ -93,9 +64,6 @@ def posText(text, x, y):
     titleRect = text.get_rect()
     titleRect.center = (x, y)
     return titleRect
-
-green = (0, 255, 0)
-blue = (0, 0, 255)
 
 stars = []
 
@@ -183,6 +151,35 @@ while running:
 
     elif screen == 4 and long_tasks == 1:
         clicks = 0
+        Pcol0 = silver
+        Pcol1 = silver
+        Pcol2 = silver
+        Pcol3 = silver
+        Pcol4 = silver
+        Pcol5 = silver
+        Pcol6 = silver
+        Pcol7 = silver
+        Pcol8 = silver
+
+
+        ai = [silver, silver, silver, silver, silver, silver, silver, silver, silver]
+
+        colours = [red, green, pink, blue, yellow, silver, silver, silver, silver]
+        for i in range(9):
+            x = random.choice(colours)
+            ai[i] = x
+            colours.remove(x)
+
+        count = 0
+        pattern = ai
+        pattern = list(pattern)
+        while True:
+            if silver not in pattern:        
+                break
+            else:
+                pattern.remove(silver)
+
+        random.shuffle(pattern)
         simon_says_exp()
     
     elif screen == 4.5 and long_tasks == 1:
