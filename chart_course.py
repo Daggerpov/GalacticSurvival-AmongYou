@@ -7,13 +7,14 @@ def chart_course():
     gui.fill(light_blue) 
     grid(width, height, 170.75, 192)
 
+    rocketPos = [main.rocketx, main.rockety]
+    nextmove = [[rocketPos[0], rocketPos[1]-192], [rocketPos[0]+170.75, rocketPos[1]], [rocketPos[0], rocketPos[1]+192]] #[up, right, down]
+    pygame.draw.rect(gui, (200, 200, 200), [])
+
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
            quit()
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                main.rocketx -= 170.75
-                main.angle = 90
             if event.key == pygame.K_RIGHT:
                 main.rocketx += 170.75
                 main.angle = 270
@@ -23,6 +24,15 @@ def chart_course():
             if event.key == pygame.K_DOWN:
                 main.rockety += 192
                 main.angle = 180
+    
+    '''if main.rockety == nextmove[0]:
+    
+    elif main.rocketx == nextmove[1]:
+    
+    elif main.rockety == nextmove[2]:
+    
+    else:
+'''
 
     rocket = reSizeRotate(pygame.image.load("./images/rocket.png"), 171, 192, main.angle)
 
@@ -41,6 +51,14 @@ def grid(width, height, image_width, image_height):
         for y in range(int(height//image_height)):
             rect = pygame.Rect(x*image_width, y*image_height, image_width, image_height)
             pygame.draw.rect(main.gui, (255, 255, 255), rect, 2)
+
+'''def randPath(rP, nM):
+    import random
+    end = [1195.25, random.choice([0, 192, 384, 576])]
+    #if nM[i] != end:
+    pass
+'''  
+
 
 '''def draw_dashed_line(surf, color, start_pos, end_pos, width=1, dash_length=10):
     import numpy

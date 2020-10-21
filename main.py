@@ -67,7 +67,7 @@ index = 1
 
 angle = 0
 rocketx = 0
-rockety = 0
+rockety = random.choice([0, 192, 384, 576])
 
 lose = False
 
@@ -112,16 +112,19 @@ while running:
 
     elif screen == 3:
         if short_tasks == 1:
+            #timer = 15
             chart_course_exp()
         elif long_tasks == 1:
+            #timer = 30
             simon_says_exp()
 
     elif screen == 3.5:
         if short_tasks == 1:
             chart_course()
-            time()
+           # time()
         elif long_tasks == 1:
             simon_says()
+            #time()
 
     elif screen == 4 and long_tasks == 1:
         simon_says_exp()

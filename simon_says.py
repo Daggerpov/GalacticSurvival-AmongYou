@@ -39,7 +39,7 @@ def simon_says():
         pattern.append(random.randint(0, 8))
         for j in pattern:
             P[j] = blue
-            pygame.time.delay(500)
+            #pygame.time.delay(500)
             P[j] = silver
         
 
