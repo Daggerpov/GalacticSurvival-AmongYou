@@ -17,6 +17,9 @@ def chart_course():
         if event.type == pygame.QUIT:
            quit()
         if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                main.rocketx -= 170.75
+                main.angle = 270
             if event.key == pygame.K_RIGHT:
                 main.rocketx += 170.75
                 main.angle = 270
