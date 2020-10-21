@@ -24,7 +24,7 @@ def simon_says():
                     main.clicks += 1 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
     
@@ -36,7 +36,7 @@ def simon_says():
                     main.clicks += 1 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
                     
@@ -48,7 +48,7 @@ def simon_says():
                     main.clicks += 1 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
 
@@ -60,7 +60,7 @@ def simon_says():
                     main.clicks += 1 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
 
@@ -72,7 +72,7 @@ def simon_says():
                     main.clicks += 1
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
 
@@ -84,7 +84,7 @@ def simon_says():
                     main.clicks += 1
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
 
@@ -96,7 +96,7 @@ def simon_says():
                     main.clicks += 1 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
                 
@@ -108,7 +108,7 @@ def simon_says():
                     main.clicks += 1
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
                 
@@ -121,7 +121,7 @@ def simon_says():
                     main.clicks += 1
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                    main.fails -= 1
+                    main.fails += 1
                     main.screen = 4
                 
                 

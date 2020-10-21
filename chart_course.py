@@ -38,7 +38,7 @@ def chart_course():
             main.screen = 5
 
     if rocketPos[1] > 576 or rocketPos[1] < 0 or rocketPos[0] > 1195.25 or rocketPos[0] < 0:
-        main.fails -= 1
+        main.fails += 1
         main.screen = 3
 
     rocket = reSizeRotate(pygame.image.load("./images/rocket.png"), 171, 192, main.angle)

@@ -16,7 +16,7 @@ def retry_calculator(index, fails):
         multiplier = 0
 
     retry_amount = math.floor((multiplier * short_tasks) + (multiplier * long_tasks * 2))
-    retry_amount += fails
+    retry_amount -= fails
 
     if retry_amount >= 0:
         main.lose = False
