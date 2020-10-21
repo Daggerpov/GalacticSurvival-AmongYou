@@ -34,7 +34,8 @@ def chart_course():
         if main.long_tasks == 1:
             main.screen = 4
         else:
-            main.screen = 10
+            main.game_end = True
+            main.screen = 5
 
     if rocketPos[1] > 576 or rocketPos[1] < 0 or rocketPos[0] > 1195.25 or rocketPos[0] < 0:
         main.fails -= 1
