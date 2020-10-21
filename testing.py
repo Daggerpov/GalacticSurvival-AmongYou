@@ -1,3 +1,9 @@
+'''
+This file was meant for testing purposes before 
+implementing the code into the actual game. This was used for our guidance 
+and how to adjust each command to our liking in our game.
+'''
+
 import pygame
 import sys, os
 pygame.init() #Initializes the PyGame module

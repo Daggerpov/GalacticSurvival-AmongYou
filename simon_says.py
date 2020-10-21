@@ -11,10 +11,12 @@ def simon_says():
 
     order = instructFont.render(f"This is the pattern order: {colour_names[pattern[0]]}, {colour_names[pattern[1]]}, {colour_names[pattern[2]]}, {colour_names[pattern[3]]}, {colour_names[pattern[4]]}.", True, green)
 
-
-    for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
+    #Allows events/actions from mouse/keyboard
+    for event in pygame.event.get(): 
+        #Close-Window
         if event.type == pygame.QUIT:
            quit()
+        #Mouse-Clicked commands
         if event.type == pygame.MOUSEBUTTONDOWN:
             if 774 <= mouse[0] <= 774+image_size and 154 <= mouse[1] <= 154+image_size:
                 Pcol0 = main.ai[0]
@@ -125,11 +127,12 @@ def simon_says():
                     main.screen = 4
                 
                 
-
+    #Checking if all clicks are correct in order
     if main.clicks == 5:
         main.game_end = True
         main.screen = 5
 
+    #Drawing player-pad
     pygame.draw.rect(gui, Pcol0, [774, 154, image_size, image_size]) 
     pygame.draw.rect(gui, Pcol1, [929, 154, image_size, image_size]) 
     pygame.draw.rect(gui, Pcol2, [1084, 154, image_size, image_size])
@@ -140,6 +143,7 @@ def simon_says():
     pygame.draw.rect(gui, Pcol7, [929, 464, image_size, image_size]) 
     pygame.draw.rect(gui, Pcol8, [1084, 464, image_size, image_size])
 
+    #Drawing ai-pad
     pygame.draw.rect(gui, main.ai[0], [154, 154, image_size, image_size])
     pygame.draw.rect(gui, main.ai[1], [309, 154, image_size, image_size]) 
     pygame.draw.rect(gui, main.ai[2], [464, 154, image_size, image_size])
@@ -150,4 +154,5 @@ def simon_says():
     pygame.draw.rect(gui, main.ai[7], [309, 464, image_size, image_size]) 
     pygame.draw.rect(gui, main.ai[8], [464, 464, image_size, image_size])
     
+    #Stating the order of colors
     gui.blit(order, posText(order, width//2+20, 75))

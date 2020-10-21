@@ -16,12 +16,12 @@ from retry_calculator import retry_calculator
 
 pygame.init()
 
+#Sounds/Audio 
 increase_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_sound_digital_short_generic_could_be_collect_item_001_56968.wav")
 decrease_task_sound = pygame.mixer.Sound("./audio/zapsplat_multimedia_game_tone_marimba_high_pitched_generic_tone_003_56830.wav")
 error_task_sound = pygame.mixer.Sound("./audio/Computer Error Alert-SoundBible.com-783113881.wav")
 
-#generating pattern for simon says 
-
+#Generating pattern for Simon Says 
 pink = (255,192,203)
 red = (255, 0, 0)
 yellow = (255, 255, 0)   
@@ -35,30 +35,22 @@ colour_names = {(255, 192, 203):'pink', (255, 255, 0):'yellow', (0, 0, 255):'blu
 resx = 1366
 resy = 768
 
+#Initializing window
 gui = pygame.display.set_mode((resx, resy)) 
 width = gui.get_width()
 height = gui.get_height()
 
-pygame.display.set_caption("Galactic Survival: Among You") #Title of Window
+#Title of Window
+pygame.display.set_caption("Galactic Survival: Among You") 
 running = True
 
-'''clock = pygame.time.Clock()
-timer = 30  # Decrease this to count down.
-dt = 0  # Delta time (time since last tick).
-
-def time():
-    import main
-    from main import gui, pygame, width
-    main.dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
-    time = instructFont.render(str(round(main.timer)), True, blue)
-    gui.blit(time, (width-100, 0))
-    main.timer -= main.dt'''
-
+#Fonts
 titleFont = pygame.font.Font(r'./fonts/In your face, joffrey!.ttf', 100)
 buttonFont = pygame.font.Font(r'./fonts/In your face, joffrey!.ttf', 32)
 taskFont = pygame.font.Font(r'./fonts/In your face, joffrey!.ttf', 50)
 instructFont = pygame.font.Font(r'./fonts/NegaraSerif-HairlineItalic.otf', 32)
 
+#Used to center text
 def posText(text, x, y):
     titleRect = text.get_rect()
     titleRect.center = (x, y)
@@ -66,10 +58,12 @@ def posText(text, x, y):
 
 stars = []
 
+#Input for username
 username = ''
 userRectx = width//2-125
 userRecty = height//4-20
 
+#Used to determine what screen the user is supposed to be on
 screen = 0
 
 short_tasks = 1
@@ -79,48 +73,30 @@ difficulty = ('easy', 'normal', 'hard', 'extreme')
 index = 1
 fails = 0
 
-'''pathx = rocketx
-pathy = rockety
-nextmove = []
-
-
-path = []
-while nextmove != endPos:
-    pathPos = [pathx, pathy]
-    moves = [[pathPos[0], pathPos[1]-192], [pathPos[0]+170.75, pathPos[1]], [pathPos[0], pathPos[1]+192]] #[up, right, down]
-    nextmove = moves[random.randint(0,2)]
-    while nextmove[1] > 576 or nextmove[1] < 0:
-        nextmove = moves[random.randint(0,2)]
-    path.append(nextmove)
-    pathx = nextmove[0]
-    pathy = nextmove[1]
-'''
 lose = False
 game_end = False
 
+#Sets up positions for stars
 for i in range(60):
     starx = random.randrange(0, resx)
     stary = random.randrange(0, resy)
     stars.append([starx, stary])
 
+#Draws a space background
 def spacebg():
     from main import resx, resy, running, gui, pygame, stars, starx , stary
     import random
 
     for i in range(len(stars)):
-        # Draw the star
         pygame.draw.circle(gui, (255, 255, 255), stars[i], 2)
-        # Move the star right one pixel
         stars[i][0] += 1
-        # If the star has moved off the bottom of the screen
         if stars[i][0] > resx:
-            # Reset it just above the top
             starx = random.randrange(-50, -10)
             stars[i][0] = starx
-            # Give it a new y position
             stary = random.randrange(0, resy)
             stars[i][1] = stary
 
+#Main game loop to create the entire game
 while running:
     pygame.time.delay(10) 
 
@@ -149,7 +125,8 @@ while running:
 
     elif screen == 3.5 and short_tasks == 1:
         clock = pygame.time.Clock()
-        dt = 0  # Delta time (time since last tick).
+        #Delta time (time since last tick).
+        dt = 0  
         def time():
             import main
             from main import gui, pygame, width
@@ -178,6 +155,7 @@ while running:
 
         ai = [silver, silver, silver, silver, silver, silver, silver, silver, silver]
 
+        #Randomizing the colours for Simon Says
         colours = [red, green, pink, blue, yellow, silver, silver, silver, silver]
         for i in range(9):
             x = random.choice(colours)
@@ -194,17 +172,19 @@ while running:
                 pattern.remove(silver)
 
         random.shuffle(pattern)
-        timer = 15  # Decrease this to count down.
+        #Sets up timer for long task
+        timer = 15  
         simon_says_exp()
     
     elif screen == 4.5 and long_tasks == 1:
         clock = pygame.time.Clock()
-        dt = 0  # Delta time (time since last tick).
+        dt = 0  
 
+        #Countdown timer
         def time():
             import main
             from main import gui, pygame, width
-            main.dt = clock.tick(30) / 1000  # / 1000 to convert to seconds.
+            main.dt = clock.tick(30) / 1000 
             time = instructFont.render(str(round(main.timer)), True, blue)
             gui.blit(time, (width-100, 0))
             main.timer -= main.dt
@@ -217,7 +197,8 @@ while running:
     if game_end == True and screen == 5:
         end()
     
-    pygame.display.update() #Updates the screen
+    #Updates the screen
+    pygame.display.update() 
 
 pygame.quit()
 quit() 

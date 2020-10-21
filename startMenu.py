@@ -12,10 +12,13 @@ def start():
     setupButton = buttonFont.render("Setup Game", True, blue)
     instructions = buttonFont.render("Instructions", True, blue)
 
-    for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
+    #Allows events/actions from mouse/keyboard
+    for event in pygame.event.get():
+        #Close-Window 
         if event.type == pygame.QUIT:
            quit()
-        if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
+        #Mouse-Clicked commands
+        if event.type == pygame.MOUSEBUTTONDOWN: 
             if width/2-70 <= mouse[0] <= width/2+70 and height/2 <= mouse[1] <= height/2+40:
                 main.screen = 1
             if width/2-60 <= mouse[0] <= width/2+60 and height/4*3 <= mouse[1] <= height/4*3+40:

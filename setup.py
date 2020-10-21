@@ -5,6 +5,7 @@ def select():
     plus = pygame.transform.scale(pygame.image.load("./images/Plus.png"), (100, 80))
     minus = pygame.transform.scale(pygame.image.load("./images/Minus.png"), (100, 80))
 
+    #Colors
     blue = (0, 0, 128)
     green = (0, 255, 0)
     dark_green = (0, 200, 0)
@@ -18,9 +19,12 @@ def select():
     textSurface = instructFont.render(main.username, True, blue)
     textPrompt = titleFont.render("Enter your username: ", True, green)
 
-    for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
+    #Allows events/actions from mouse/keyboard
+    for event in pygame.event.get(): 
+        #Close-Window
         if event.type == pygame.QUIT:
            quit()
+        #Mouse-Clicked commands
         if event.type == pygame.MOUSEBUTTONDOWN: 
             if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
                 main.screen = 0
@@ -82,7 +86,7 @@ def select():
             else:
                 main.username += event.unicode        
 
-    #back button in bottom-left of screen
+    #back button in top-left of screen
     if 10 <= mouse[0] <= 80 and 10 <= mouse[1] <= 50:
         pygame.draw.rect(gui, green, [10, 10, 70, 40])
     else:
@@ -91,13 +95,16 @@ def select():
     #back button for both setup.py and instructions.py
     gui.blit(back, (25, 15))
 
+    #start button near lower-middle of screen
     if width//2-50 <= mouse[0] <= width//2+70 and height//1.25 <= mouse[1] <= height//1.25+40:
         pygame.draw.rect(gui, green, [width//2-50, height//1.25, 120, 40])
     else:
         pygame.draw.rect(gui, dark_green, [width//2-50, height//1.25, 120, 40])
 
+    #Drawing start button
     gui.blit(start, posText(start, width//2+10, height//1.25+20))
 
+    #Drawing the pluses/minuses for increments/decrements of tasks/difficulty
     gui.blit(plus, (width//2-150, height//2-90))
     gui.blit(minus, (100, height//2-90))
     gui.blit(plus, (width-150, height//2-90))
@@ -105,6 +112,7 @@ def select():
     gui.blit(plus, (width//2+250, height//2+55))
     gui.blit(minus, (width//2-325, height//2+55))
 
+    #Drawing the names of the tasks/difficulty
     shortTasks = taskFont.render('Short Tasks = ' + str(main.short_tasks), True, (0, 255, 0)) #Initializing text
     longTasks = taskFont.render('Long Tasks = ' + str(main.long_tasks), True, (0, 255, 0)) #Initializing text
     difficultySlider = taskFont.render('Difficulty = ' + str(main.difficulty[main.index]), True, (0, 255, 0))
