@@ -1,6 +1,6 @@
 def retry_calculator(index, fails):
     import main
-    from main import lose, index, short_tasks, long_tasks
+    from main import lose, index, short_tasks, long_tasks, screen, game_end
     from endMenu import end
     import math
     
@@ -22,4 +22,6 @@ def retry_calculator(index, fails):
         return retry_amount + fails
     else:
         lose = True
-        end()
+        return retry_amount + fails
+        main.screen = 5
+        main.game_end = True
