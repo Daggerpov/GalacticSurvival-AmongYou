@@ -27,8 +27,11 @@ def chart_course():
                 main.rockety += 192
                 main.angle = 180
 
-    if rocketPos[0] >= main.endPos[0] and rocketPos[1] == main.endPos[1]:
-        main.screen = 4
+    if rocketPos == main.endPos:
+        if main.long_tasks == 1:
+            main.screen = 4
+        else:
+            main.screen = 10
 
     if rocketPos[1] > 576 or rocketPos[1] < 0:
         main.retries -= 1

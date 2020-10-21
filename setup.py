@@ -9,8 +9,6 @@ def select():
     green = (0, 255, 0)
     dark_green = (0, 200, 0)
 
-    
-
     gui.fill((0, 0, 0))
     spacebg()
 
@@ -73,7 +71,7 @@ def select():
                 if main.username != '':
                     if main.short_tasks == 1:
                         main.screen = 3
-                    if main.long_tasks == 1:
+                    elif main.long_tasks == 1:
                         main.screen = 4
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
