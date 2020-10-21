@@ -1,6 +1,7 @@
 def retry_calculator(index):
     import main
     from main import lose, index, short_tasks, long_tasks
+    from endMenu import end
     import math
     
     multiplier = 1
@@ -21,4 +22,4 @@ def retry_calculator(index):
         return retry_amount
     else:
         lose = True
-        end() 
+        end()
