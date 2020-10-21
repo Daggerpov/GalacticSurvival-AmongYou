@@ -15,6 +15,7 @@ def retry_calculator(index, fails):
     elif index == 3:
         multiplier = 0
 
+    #long tasks are 'worth' double the retry attempts
     retry_amount = math.floor((multiplier * short_tasks) + (multiplier * long_tasks * 2))
     retry_amount -= fails
 
