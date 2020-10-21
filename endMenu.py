@@ -25,6 +25,7 @@ def end():
                 main.short_tasks = 1
                 main.long_tasks = 0
                 main.index = 1
+                main.fails = 0
                 
     
 

@@ -130,6 +130,7 @@ while running:
 
     if screen == 0:
         start()
+        fails = 0
         which_message = random.randint(0, 4)
 
     elif screen == 1:
