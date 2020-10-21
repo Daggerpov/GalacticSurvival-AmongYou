@@ -58,6 +58,10 @@ while True:
         break
     else:
         pattern.remove(silver)
+
+random.shuffle(pattern)
+
+
     
 
 
