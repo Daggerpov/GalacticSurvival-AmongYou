@@ -1,8 +1,7 @@
 def end():
     import main
-    from main import gui, width, height, titleFont, buttonFont, mouse, pygame, posText, spacebg, lose
+    from main import gui, width, height, titleFont, buttonFont, mouse, pygame, posText, spacebg
 
-    import random
 
     green = (0, 255, 0)
     red = (255, 0, 0)
@@ -20,17 +19,16 @@ def end():
         if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
             if width/2-150 <= mouse[0] <= width/2+150 and height/4*3 <= mouse[1] <= height/4*3+40:
                 main.screen = 0
+                main.lose = False 
+                main.game_end = False
                 main.username = ''
                 main.short_tasks = 1
                 main.long_tasks = 0
                 main.index = 1
-                main.lose = False 
-                main.game_end = False
+                
     
 
-    if lose == True:
-        which_message = random.randint(0, 4)
-
+    if main.lose == True:
         messages = [
             f"{main.username}, you've doomed us all!", \
             "Oh no, the ship has been destroyed!", \
@@ -38,7 +36,7 @@ def end():
             "You've failed to save the ship!", \
             "You're worse than Daggerpov!" \
             ]
-        endTitle = titleFont.render(messages[which_message], True, green)
+        endTitle = titleFont.render(messages[main.which_message], True, green)
     else:
         endTitle = titleFont.render("You've saved the ship!", True, green)
 

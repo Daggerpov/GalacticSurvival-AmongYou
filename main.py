@@ -130,6 +130,7 @@ while running:
 
     if screen == 0:
         start()
+        which_message = random.randint(0, 4)
 
     elif screen == 1:
         select()
@@ -148,7 +149,6 @@ while running:
     elif screen == 3.5 and short_tasks == 1:
         clock = pygame.time.Clock()
         dt = 0  # Delta time (time since last tick).
-
         def time():
             import main
             from main import gui, pygame, width
