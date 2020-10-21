@@ -24,7 +24,7 @@ def simon_says_exp():
     text1 = instructFont.render('Follow the directions to start the reactor!', True, dark_green)
     text2 = instructFont.render('Win: Copied all directions perfectly', True, dark_green)
     text3 = instructFont.render('Lose Retry: Fail to copy the right directions', True, dark_green)
-    text4 = instructFont.render(f'You have 30 seconds for this task, {username}', True, dark_green)
+    text4 = instructFont.render(f'You have 15 seconds for this task, {username}', True, dark_green)
 
     gui.blit(text1, posText(text1, width//2, height//2-100))
     gui.blit(text2, posText(text2, width//2, height//2-50))
