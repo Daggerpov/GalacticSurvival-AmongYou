@@ -36,7 +36,7 @@ def chart_course():
         else:
             main.screen = 10
 
-    if rocketPos[1] > 576 or rocketPos[1] < 0:
+    if rocketPos[1] > 576 or rocketPos[1] < 0 or rocketPos[0] > 1195.25 or rocketPos[0] < 0:
         main.fails -= 1
         main.screen = 3
 
