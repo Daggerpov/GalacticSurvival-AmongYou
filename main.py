@@ -60,7 +60,6 @@ while True:
         pattern.remove(silver)
 
 random.shuffle(pattern)
-clicks = 0
 
 #Resolution dimensions
 resx = 1366
@@ -111,8 +110,7 @@ long_tasks = 0
 
 difficulty = ('easy', 'normal', 'hard', 'extreme')
 index = 1
-
-
+fails = 0
 
 angle = 0
 rocketx = 0
@@ -135,6 +133,7 @@ while nextmove != endPos:
     pathy = nextmove[1]
 '''
 lose = False
+game_end = False
 
 for i in range(60):
     starx = random.randrange(0, resx)
@@ -164,7 +163,7 @@ while running:
 
     mouse = pygame.mouse.get_pos()
 
-    retries = retry_calculator(index)
+    retries = retry_calculator(index, fails)
 
     if screen == 0:
         start()
@@ -183,13 +182,14 @@ while running:
         chart_course()
 
     elif screen == 4 and long_tasks == 1:
+        clicks = 0
         simon_says_exp()
     
-    elif screen == 4.5 and long_tasks == 1:
+    else:
         time()
         simon_says()
 
-    else:
+    if game_end == True:
         end()
     
     pygame.display.update() #Updates the screen

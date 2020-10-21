@@ -1,7 +1,7 @@
 def chart_course():
     import main
     import random 
-    from main import pygame, gui, width, height, mouse, buttonFont, posText
+    from main import pygame, gui, width, height, mouse, buttonFont, posText, fails
 
     light_blue = (115, 194, 251)
 
@@ -34,7 +34,7 @@ def chart_course():
             main.screen = 10
 
     if rocketPos[1] > 576 or rocketPos[1] < 0:
-        main.retries -= 1
+        main.fails -= 1
         main.screen = 3
 
     rocket = reSizeRotate(pygame.image.load("./images/rocket.png"), 171, 192, main.angle)

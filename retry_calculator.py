@@ -1,4 +1,4 @@
-def retry_calculator(index):
+def retry_calculator(index, fails):
     import main
     from main import lose, index, short_tasks, long_tasks
     from endMenu import end
@@ -19,7 +19,7 @@ def retry_calculator(index):
 
     if retry_amount >= 0:
         lose = False
-        return retry_amount
+        return retry_amount + fails
     else:
         lose = True
         end()
