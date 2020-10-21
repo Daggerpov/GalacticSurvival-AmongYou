@@ -27,11 +27,11 @@ def end():
                 main.lose = False 
 
                 
-    if width//2-60 <= mouse[0] <= width//2+300 and height//2-10 <= mouse[1] <= height//2+40: 
-        pygame.draw.rect(gui, red,[width//2-60, height//2-10, 300, 40]) 
+    if width//2 <= mouse[0] <= width//2+300 and height//2-10 <= mouse[1] <= height//2+40: 
+        pygame.draw.rect(gui, red,[width//2, height//2-10, 300, 40]) 
         
     else: 
-        pygame.draw.rect(gui, dark_red, [width//2-60, height//2-10, 300, 40])
+        pygame.draw.rect(gui, dark_red, [width//2, height//2-10, 300, 40])
     
 
     if lose == True:
