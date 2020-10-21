@@ -18,20 +18,13 @@ def end():
         if event.type == pygame.QUIT:
            quit()
         if event.type == pygame.MOUSEBUTTONDOWN: #The close window function
-            if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
+            if width/2-150 <= mouse[0] <= width/2+150 and height/4*3 <= mouse[1] <= height/4*3+40:
                 main.screen = 0
                 main.username = ''
                 main.short_tasks = 1
                 main.long_tasks = 0
                 main.index = 1
                 main.lose = False 
-
-                
-    if width//2 <= mouse[0] <= width//2+300 and height//2-10 <= mouse[1] <= height//2+40: 
-        pygame.draw.rect(gui, red,[width//2, height//2-10, 300, 40]) 
-        
-    else: 
-        pygame.draw.rect(gui, dark_red, [width//2, height//2-10, 300, 40])
     
 
     if lose == True:
@@ -49,4 +42,12 @@ def end():
         endTitle = titleFont.render("You've saved the ship!", True, green)
 
     gui.blit(endTitle, posText(endTitle, width//2, 75))
-    gui.blit(menuButton, posText(menuButton, width//2, height//2))
+
+
+    if width/2-150 <= mouse[0] <= width/2+150 and height/4*3 <= mouse[1] <= height/4*3+40: 
+        pygame.draw.rect(gui, red,[width/2-150, height/4*3, 300, 40]) 
+        
+    else: 
+        pygame.draw.rect(gui, dark_red, [width/2-150, height/4*3, 300, 40]) 
+
+    gui.blit(menuButton, (width/2-100, height/4*3+5))
