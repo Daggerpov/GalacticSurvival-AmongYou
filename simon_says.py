@@ -39,9 +39,6 @@ def simon_says():
         pattern.append(random.randint(0, 8))
         for j in pattern:
             P[j] = blue
-            #pygame.time.delay(500)
-            P[j] = silver
-        
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
         if event.type == pygame.QUIT:
@@ -49,31 +46,31 @@ def simon_says():
         if event.type == pygame.MOUSEBUTTONDOWN:
             if 774 <= mouse[0] <= 774+image_size and 154 <= mouse[1] <= 154+image_size:
                 Pcol0 = blue
-                pygame.time.delay(500)
+                
             if 929 <= mouse[0] <= 929+image_size and 154 <= mouse[1] <= 154+image_size:
                 Pcol1 = blue
-                pygame.time.delay(500)
+                
             if 1084 <= mouse[0] <= 1084+image_size and 154 <= mouse[1] <= 154+image_size:
                 Pcol2 = blue
-                pygame.time.delay(500)
+                
             if 774 <= mouse[0] <= 774+image_size and 309 <= mouse[1] <= 309+image_size:
                 Pcol3 = blue
-                pygame.time.delay(500)
+                
             if 929 <= mouse[0] <= 929+image_size and 309 <= mouse[1] <= 309+image_size:
                 Pcol4 = blue
-                pygame.time.delay(500)
+                
             if 1084 <= mouse[0] <= 1084+image_size and 309 <= mouse[1] <= 309+image_size:
                 Pcol5 = blue
-                pygame.time.delay(500)
+                
             if 774 <= mouse[0] <= 774+image_size and 464 <= mouse[1] <= 464+image_size:
                 Pcol6 = blue
-                pygame.time.delay(500)
+                
             if 929 <= mouse[0] <= 929+image_size and 464 <= mouse[1] <= 464+image_size:
                 Pcol7 = blue
-                pygame.time.delay(500)
+                
             if 1084 <= mouse[0] <= 1084+image_size and 464 <= mouse[1] <= 464+image_size:
                 Pcol8 = blue
-                pygame.time.delay(500)
+                
     
     pygame.draw.rect(gui, Pcol0, [774, 154, image_size, image_size]) 
     pygame.draw.rect(gui, Pcol1, [929, 154, image_size, image_size]) 
