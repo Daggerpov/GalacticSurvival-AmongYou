@@ -112,12 +112,12 @@ def spacebg():
             stary = random.randrange(0, resy)
             stars[i][1] = stary
 
-retries = retry_calculator(index)
-
 while running:
     pygame.time.delay(10) 
 
     mouse = pygame.mouse.get_pos()
+
+    retries = retry_calculator(index)
 
     if screen == 0:
         start()
@@ -139,10 +139,10 @@ while running:
     elif screen == 3.5:
         if short_tasks == 1:
             chart_course()
-            #time()
+            time()
         elif long_tasks == 1:
             simon_says()
-            #time()
+            time()
 
     elif screen == 4 and long_tasks == 1:
         simon_says_exp()
