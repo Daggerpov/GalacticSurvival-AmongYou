@@ -7,8 +7,6 @@ def simon_says():
     gui.fill((0, 0, 0))
     spacebg()
     green = (0, 255, 0)
-
-    clicks = 0    
     
 
     order = instructFont.render(f"This is the pattern order: {colour_names[pattern[0]]}, {colour_names[pattern[1]]}, {colour_names[pattern[2]]}, {colour_names[pattern[3]]}, {colour_names[pattern[4]]}.", True, green)
@@ -21,82 +19,101 @@ def simon_says():
             if 774 <= mouse[0] <= 774+image_size and 154 <= mouse[1] <= 154+image_size:
                 Pcol0 = main.ai[0]
                 pygame.draw.rect(gui, Pcol0, [774, 154, image_size, image_size])
-                if pattern[clicks] == Pcol0:
+                if pattern[main.clicks] == Pcol0:
                     pygame.mixer.Sound.play(main.increase_task_sound) 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                clicks += 1
+                    main.screen = 4
+                main.clicks += 1
+                
     
             if 929 <= mouse[0] <= 929+image_size and 154 <= mouse[1] <= 154+image_size:
                 Pcol1 = main.ai[1]
                 pygame.draw.rect(gui, Pcol1, [929, 154, image_size, image_size]) 
-                if pattern[clicks] == Pcol1:
+                if pattern[main.clicks] == Pcol1:
                     pygame.mixer.Sound.play(main.increase_task_sound) 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                clicks += 1
+                    main.screen = 4
+                main.clicks += 1
+                
                     
             if 1084 <= mouse[0] <= 1084+image_size and 154 <= mouse[1] <= 154+image_size:
                 Pcol2 = main.ai[2]
                 pygame.draw.rect(gui, Pcol2, [1084, 154, image_size, image_size])
-                if pattern[clicks] == Pcol2:
+                if pattern[main.clicks] == Pcol2:
                     pygame.mixer.Sound.play(main.increase_task_sound) 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                clicks += 1
+                    main.screen = 4
+                main.clicks += 1
+                
 
             if 774 <= mouse[0] <= 774+image_size and 309 <= mouse[1] <= 309+image_size:
                 Pcol3 = main.ai[3]
                 pygame.draw.rect(gui, Pcol3, [774, 309, image_size, image_size]) 
-                if pattern[clicks] == Pcol3:
+                if pattern[main.clicks] == Pcol3:
                     pygame.mixer.Sound.play(main.increase_task_sound) 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                clicks += 1
+                    main.screen = 4
+                main.clicks += 1
+                
 
             if 929 <= mouse[0] <= 929+image_size and 309 <= mouse[1] <= 309+image_size:
                 Pcol4 = main.ai[4]
                 pygame.draw.rect(gui, Pcol4, [929, 309, image_size, image_size]) 
-                if pattern[clicks] == Pcol4:
+                if pattern[main.clicks] == Pcol4:
                     pygame.mixer.Sound.play(main.increase_task_sound) 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                clicks += 1
+                    main.screen = 4
+                main.clicks += 1
+                
 
             if 1084 <= mouse[0] <= 1084+image_size and 309 <= mouse[1] <= 309+image_size:
                 Pcol5 = main.ai[5]
                 pygame.draw.rect(gui, Pcol5, [1084, 309, image_size, image_size])
-                if pattern[clicks] == Pcol5:
+                if pattern[main.clicks] == Pcol5:
                     pygame.mixer.Sound.play(main.increase_task_sound) 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
+                    main.screen = 4
+                main.clicks += 1
+                
 
             if 774 <= mouse[0] <= 774+image_size and 464 <= mouse[1] <= 464+image_size:
                 Pcol6 = main.ai[6]
                 pygame.draw.rect(gui, Pcol6, [774, 464, image_size, image_size]) 
-                if pattern[clicks] == Pcol6:
+                if pattern[main.clicks] == Pcol6:
                     pygame.mixer.Sound.play(main.increase_task_sound) 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                clicks += 1
+                    main.screen = 4
+                main.clicks += 1
+                
                 
             if 929 <= mouse[0] <= 929+image_size and 464 <= mouse[1] <= 464+image_size:
                 Pcol7 = main.ai[7]
                 pygame.draw.rect(gui, Pcol7, [929, 464, image_size, image_size]) 
-                if pattern[clicks] == Pcol7:
+                if pattern[main.clicks] == Pcol7:
                     pygame.mixer.Sound.play(main.increase_task_sound)
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                clicks += 1
+                    main.screen = 4
+                main.clicks += 1
+                
                 
             if 1084 <= mouse[0] <= 1084+image_size and 464 <= mouse[1] <= 464+image_size:
                 Pcol8 = main.ai[8]
                 pygame.draw.rect(gui, Pcol8, [1084, 464, image_size, image_size])
-                if pattern[clicks] == Pcol8:
+                if pattern[main.clicks] == Pcol8:
                     pygame.mixer.Sound.play(main.increase_task_sound) 
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
-                clicks += 1
+                    main.screen = 4
+                main.clicks += 1
+                
 
 
     pygame.draw.rect(gui, Pcol0, [774, 154, image_size, image_size]) 

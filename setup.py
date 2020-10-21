@@ -71,7 +71,10 @@ def select():
             
             if width//2-50 <= mouse[0] <= width//2+70 and height//1.25 <= mouse[1] <= height//1.25+40:
                 if main.username != '':
-                    main.screen = 3
+                    if main.short_tasks == 1:
+                        main.screen = 3
+                    if main.long_tasks == 1:
+                        main.screen = 4
                 else:
                     pygame.mixer.Sound.play(main.error_task_sound)
                     continue

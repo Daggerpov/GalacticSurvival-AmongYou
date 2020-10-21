@@ -60,10 +60,7 @@ while True:
         pattern.remove(silver)
 
 random.shuffle(pattern)
-
-
-    
-
+clicks = 0
 
 #Resolution dimensions
 resx = 1366
@@ -179,26 +176,18 @@ while running:
     elif screen == 2:
         instruct()
 
-    elif screen == 3:
-        if short_tasks == 1:
-            #timer = 15
-            chart_course_exp()
-        elif long_tasks == 1:
-            #timer = 30
-            simon_says_exp()
+    elif screen == 3 and short_tasks == 1:
+        chart_course_exp()
 
-    elif screen == 3.5:
-        if short_tasks == 1:
-            chart_course()
-            time()
-        elif long_tasks == 1:
-            simon_says()
-            time()
+    elif screen == 3.5 and short_tasks == 1:
+        time()
+        chart_course()
 
     elif screen == 4 and long_tasks == 1:
         simon_says_exp()
     
-    elif screen == 4.5:
+    elif screen == 4.5 and long_tasks == 1:
+        time()
         simon_says()
 
     else:
