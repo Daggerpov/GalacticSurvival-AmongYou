@@ -16,12 +16,13 @@ def retry_calculator(index, fails):
         multiplier = 0
 
     retry_amount = math.floor((multiplier * short_tasks) + (multiplier * long_tasks * 2))
+    retry_amount += fails
 
     if retry_amount >= 0:
-        lose = False
-        return retry_amount + fails
+        main.lose = False
+        return retry_amount
     else:
-        lose = True
-        return retry_amount + fails
+        main.lose = True
         main.screen = 5
         main.game_end = True
+

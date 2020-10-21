@@ -25,10 +25,11 @@ def end():
                 main.long_tasks = 0
                 main.index = 1
                 main.lose = False 
+                main.game_end = False
     
 
     if lose == True:
-        which_message = random.randint(0, 5)
+        which_message = random.randint(0, 4)
 
         messages = [
             f"{main.username}, you've doomed us all!", \
