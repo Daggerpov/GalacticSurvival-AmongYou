@@ -9,7 +9,8 @@ from instructions import instruct
 
 from chart_course_exp import chart_course_exp
 from simon_says_exp import simon_says_exp
-from chart_course import chart_course 
+
+from chart_course import chart_course
 from simon_says import simon_says
 from retry_calculator import retry_calculator
 
@@ -68,7 +69,24 @@ index = 1
 angle = 0
 rocketx = 0
 rockety = random.choice([0, 192, 384, 576])
+endPos = [1197, random.choice([0, 192, 384, 576])]
+print(endPos)
+'''pathx = rocketx
+pathy = rockety
+nextmove = []
 
+
+path = []
+while nextmove != endPos:
+    pathPos = [pathx, pathy]
+    moves = [[pathPos[0], pathPos[1]-192], [pathPos[0]+170.75, pathPos[1]], [pathPos[0], pathPos[1]+192]] #[up, right, down]
+    nextmove = moves[random.randint(0,2)]
+    while nextmove[1] > 576 or nextmove[1] < 0:
+        nextmove = moves[random.randint(0,2)]
+    path.append(nextmove)
+    pathx = nextmove[0]
+    pathy = nextmove[1]
+'''
 lose = False
 
 for i in range(60):
@@ -94,12 +112,12 @@ def spacebg():
             stary = random.randrange(0, resy)
             stars[i][1] = stary
 
+retries = retry_calculator(index)
+
 while running:
     pygame.time.delay(10) 
 
     mouse = pygame.mouse.get_pos()
-
-    retries = retry_calculator(index)
 
     if screen == 0:
         start()
@@ -121,7 +139,7 @@ while running:
     elif screen == 3.5:
         if short_tasks == 1:
             chart_course()
-           # time()
+            #time()
         elif long_tasks == 1:
             simon_says()
             #time()
