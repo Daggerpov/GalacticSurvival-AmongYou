@@ -26,6 +26,8 @@ def chart_course():
             if event.key == pygame.K_DOWN:
                 main.rockety += 192
                 main.angle = 180
+            
+    print(rocketPos)
 
     if rocketPos == main.endPos:
         if main.long_tasks == 1:

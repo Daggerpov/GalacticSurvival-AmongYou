@@ -117,7 +117,7 @@ index = 1
 angle = 0
 rocketx = 0
 rockety = random.choice([0, 192, 384, 576])
-endPos = [1197, random.choice([0, 192, 384, 576])]
+endPos = [1195.25, random.choice([0, 192, 384, 576])]
 print(endPos)
 '''pathx = rocketx
 pathy = rockety
