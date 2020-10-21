@@ -24,8 +24,7 @@ error_task_sound = pygame.mixer.Sound("./audio/Computer Error Alert-SoundBible.c
 
 pink = (255,192,203)
 red = (255, 0, 0)
-yellow = (255, 255, 0)
-blue = (0, 0, 255)    
+yellow = (255, 255, 0)   
 silver = (192, 192, 192)
 green = (0, 255, 0)
 blue = (0, 0, 255)
