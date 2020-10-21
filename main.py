@@ -112,10 +112,6 @@ difficulty = ('easy', 'normal', 'hard', 'extreme')
 index = 1
 fails = 0
 
-angle = 0
-rocketx = 0
-rockety = random.choice([0, 192, 384, 576])
-endPos = [1195.25, random.choice([0, 192, 384, 576])]
 '''pathx = rocketx
 pathy = rockety
 nextmove = []
@@ -175,6 +171,10 @@ while running:
         instruct()
 
     elif screen == 3 and short_tasks == 1:
+        angle = 0
+        rocketx = 0
+        rockety = random.choice([0, 192, 384, 576])
+        endPos = [1195.25, random.choice([0, 192, 384, 576])]
         chart_course_exp()
 
     elif screen == 3.5 and short_tasks == 1:
