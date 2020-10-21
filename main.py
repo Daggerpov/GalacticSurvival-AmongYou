@@ -142,7 +142,7 @@ while running:
         rocketx = 0
         rockety = random.choice([0, 192, 384, 576])
         endPos = [1195.25, random.choice([0, 192, 384, 576])]
-        timer = 15  # Decrease this to count down.
+        timer = 10  # Decrease this to count down.
         chart_course_exp()
 
     elif screen == 3.5 and short_tasks == 1:
@@ -193,7 +193,7 @@ while running:
                 pattern.remove(silver)
 
         random.shuffle(pattern)
-        timer = 30  # Decrease this to count down.
+        timer = 15  # Decrease this to count down.
         simon_says_exp()
     
     elif screen == 4.5 and long_tasks == 1:
