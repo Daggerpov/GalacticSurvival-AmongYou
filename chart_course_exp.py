@@ -24,7 +24,7 @@ def chart_course_exp():
     text1 = instructFont.render('Chart the course of our ship to make sure we don\'t get lost!', True, dark_green)
     text2 = instructFont.render('Win: Successfully go through all the directions from start to end', True, dark_green)
     text3 = instructFont.render('Lose Retry: By moving to the wrong direction', True, dark_green)
-    text4 = instructFont.render(f'You have 30 seconds for this task, {username}', True, dark_green)
+    text4 = instructFont.render(f'You have 15 seconds for this task, {username}', True, dark_green)
 
 
     gui.blit(text1, posText(text1, width//2, height//2-100))
