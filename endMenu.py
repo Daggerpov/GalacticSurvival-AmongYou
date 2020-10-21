@@ -12,8 +12,6 @@ def end():
     gui.fill((0, 0, 0))
     spacebg()
 
-    
-
     menuButton = buttonFont.render("Return to Main Menu", True, blue)
 
     for event in pygame.event.get(): #Allows events/actions from mouse/keyboard
